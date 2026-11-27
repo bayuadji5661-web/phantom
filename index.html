@@ -36,7 +36,9 @@ div[style*="background:#111B2E"][style*="border-radius:20px"]{border-radius:16px
 h2[style*="Space Grotesk"]{font-size:clamp(24px,3vw,38px)!important}
 p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
 .g-feat{gap:12px!important}
+@media (min-width:900px){.tiles:not(.tiles4){grid-template-columns:repeat(5,minmax(0,1fr))!important}}
 @media (max-width:640px){
+  .tiles.tiles4{grid-template-columns:repeat(2,minmax(0,1fr))!important}
   body{font-size:15px}
   section > div[style*="padding:clamp(56px,8vw,96px)"]{padding:36px 16px!important}
   section#top{padding:32px 16px 28px!important;gap:28px!important}
@@ -77,7 +79,8 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
 <a href="#teknologi" style="color:#B6C2D9">Teknologi</a>
 <a href="#cara-kerja" style="color:#B6C2D9">Cara kerja</a>
 <a href="#risiko" style="color:#B6C2D9">Risiko</a>
-<a href="#hasil" style="color:#B6C2D9">Hasil live</a>
+<a href="audit" style="color:#B6C2D9">Hasil live</a>
+<a href="panduan" style="color:#B6C2D9">Panduan</a>
 <a href="#harga" style="color:#B6C2D9">Harga</a>
 <a href="#faq" style="color:#B6C2D9">FAQ</a>
 </nav>
@@ -95,7 +98,7 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
 <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px">
 <a href="https://t.me/phantomgen3" style="background:#E8C46A;color:#241B04;font-weight:600;padding:14px 22px;border-radius:12px;min-height:48px;display:inline-flex;align-items:center;gap:8px">Gabung beta gratis 1 bulan
 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="#241B04" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-<a href="#hasil" style="border:1px solid #2F426A;color:#EEF2F8;font-weight:500;padding:14px 22px;border-radius:12px;min-height:48px;display:inline-flex;align-items:center">Lihat hasil live</a>
+<a href="audit" style="border:1px solid #2F426A;color:#EEF2F8;font-weight:500;padding:14px 22px;border-radius:12px;min-height:48px;display:inline-flex;align-items:center">Lihat hasil live</a>
 </div>
 <div style="display:flex;flex-wrap:wrap;gap:10px 28px;font-size:14px;color:#9AA8C1">
 <span style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8C46A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>VPS dari kami</span>
@@ -286,60 +289,19 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
 
 <section id="hasil" style="border-top:1px solid #1C2A45;background:#0E1729">
 <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,96px) clamp(20px,5vw,48px)">
-<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:28px">
-<div style="max-width:660px">
 <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#E8C46A;letter-spacing:1.5px;margin-bottom:10px">AUDIT LIVE · 100% ALGO TRADING</div>
-<h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.4vw,42px);line-height:1.15;margin:0 0 12px">Setiap trade AI Agent tercatat, lengkap dengan alasannya.</h2>
-<p style="color:#B6C2D9;margin:0">Data dikirim langsung oleh agent dan hanya memuat trade Phantom yang sudah ditutup, menang, BE maupun kalah. Trade manual, deposit dan penarikan tidak ikut dihitung. Data dimulai saat Zone Strike aktif (<span id="au-since">26 Nov 2026</span>); trade strategi lama Phantom sebelum itu tidak ditampilkan. Klik sebuah trade untuk melihat alasan eksekusi, SL, TP dan jalannya posisi.</p>
+<h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.4vw,42px);line-height:1.15;margin:0 0 12px;max-width:720px">Setiap trade AI Agent tercatat terbuka.</h2>
+<p style="color:#B6C2D9;max-width:680px;margin:0 0 20px">Menang, BE maupun kalah, lengkap dengan alasan eksekusi, SL, TP dan jalannya posisi. Data dikirim langsung oleh agent sejak Zone Strike aktif.</p>
+<div class="tiles tiles4" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:14px">
+<div class="tile"><div class="tl">Profit bersih (USC)</div><div class="tv" id="tz-net">–</div></div>
+<div class="tile"><div class="tl">Total R</div><div class="tv" id="tz-r">–</div></div>
+<div class="tile"><div class="tl">Total trade</div><div class="tv" id="tz-trades">–</div></div>
+<div class="tile"><div class="tl">Win rate</div><div class="tv" id="tz-wr">–</div></div>
 </div>
-<div style="display:flex;flex-direction:column;align-items:flex-start;gap:8px">
-<span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#B6C2D9"><span id="au-dot" style="width:8px;height:8px;border-radius:50%;background:#7F8DA8;display:inline-block"></span><span id="au-updated">Memuat data live…</span></span>
-<span id="au-open" style="font-size:13px;color:#9AA8C1"></span>
-<a href="audit.json" target="_blank" rel="noopener" style="border:1px solid #2F426A;color:#EEF2F8;padding:11px 16px;border-radius:12px;font-size:14px;min-height:44px;display:inline-flex;align-items:center;gap:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8C46A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Data mentah (audit.json)</a>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px">
+<a href="audit" style="background:#E8C46A;color:#241B04;font-weight:600;padding:13px 20px;border-radius:12px;min-height:46px;display:inline-flex;align-items:center">📊 Buka audit lengkap</a>
+<span id="tz-upd" style="font-size:13px;color:#9AA8C1">Memuat data live…</span>
 </div>
-</div>
-
-<div id="au-msg" role="status" style="display:none;border:1px dashed #2F426A;border-radius:14px;padding:16px 18px;color:#9AA8C1;font-size:14px;text-align:center;margin-bottom:16px"></div>
-
-<div class="tiles" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:16px">
-<div class="tile"><div class="tl">Profit bersih</div><div class="tv" id="st-net">–</div><div class="ts" id="st-net-s">USC, setelah biaya</div></div>
-<div class="tile"><div class="tl">Total trade</div><div class="tv" id="st-trades">–</div><div class="ts" id="st-trades-s">menang · kalah · BE</div></div>
-<div class="tile"><div class="tl">Win rate</div><div class="tv" id="st-wr">–</div><div class="ts">BE dihitung terpisah</div></div>
-<div class="tile"><div class="tl">Profit factor</div><div class="tv" id="st-pf">–</div><div class="ts">total untung ÷ total rugi</div></div>
-<div class="tile"><div class="tl">Rata-rata RR win</div><div class="tv" id="st-avgwin">–</div><div class="ts">R per trade yang menang</div></div>
-<div class="tile"><div class="tl">Rata-rata loss</div><div class="tv" id="st-avgloss">–</div><div class="ts">R per trade yang kalah</div></div>
-<div class="tile"><div class="tl">Expectancy</div><div class="tv" id="st-exp">–</div><div class="ts">R rata-rata per trade</div></div>
-<div class="tile"><div class="tl">Drawdown terdalam</div><div class="tv" id="st-dd">–</div><div class="ts" id="st-dd-s">dari puncak kurva</div></div>
-<div class="tile"><div class="tl">Rata-rata durasi</div><div class="tv" id="st-dur">–</div><div class="ts">entry sampai close</div></div>
-<div class="tile"><div class="tl">Loss beruntun terpanjang</div><div class="tv" id="st-streak">–</div><div class="ts">jumlah trade</div></div>
-</div>
-
-<div id="strat-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-bottom:16px"></div>
-
-<div style="background:#111B2E;border:1px solid #22314F;border-radius:16px;padding:20px;margin-bottom:24px">
-<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px;font-size:14px">
-<span><span style="font-weight:600">Kurva hasil kumulatif</span> <span id="curve-since" style="color:#9AA8C1"></span></span>
-<div role="group" aria-label="Satuan kurva" style="display:flex;gap:6px">
-<button type="button" class="chip on" data-unit="r">R</button><button type="button" class="chip" data-unit="pl">USC</button>
-</div>
-</div>
-<div id="curve" style="height:200px;position:relative"></div>
-</div>
-
-<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px">
-<h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;margin:0">Riwayat trade</h3>
-<div role="group" aria-label="Filter riwayat" id="filters" style="display:flex;flex-wrap:wrap;gap:6px">
-<button type="button" class="chip on" data-f="all">Semua</button>
-<button type="button" class="chip" data-f="ZONE_STRIKE">Zone Strike</button>
-<button type="button" class="chip" data-f="SWEEP_HUNTER">Liquidity Raid · segera</button>
-<button type="button" class="chip" data-f="WIN">Menang</button>
-<button type="button" class="chip" data-f="LOSS">Kalah</button>
-<button type="button" class="chip" data-f="BE">BE</button>
-</div>
-</div>
-<div id="trades" style="display:grid;gap:10px"></div>
-<button type="button" id="more" style="display:none;margin:14px auto 0;background:transparent;color:#EEF2F8;border:1px solid #2F426A;border-radius:12px;padding:12px 18px;font:500 14px Inter,sans-serif;min-height:44px">Tampilkan lebih banyak</button>
-<p style="font-size:12px;color:#7F8DA8;margin:16px 0 0">R = laba/rugi bersih dibagi risiko awal trade (setelah spread, komisi dan swap). Posisi yang masih berjalan tidak ditampilkan rinciannya sampai ditutup.</p>
 </div>
 </section>
 
@@ -353,9 +315,9 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
 <li style="border-top:2px solid #E8C46A;padding-top:18px"><div style="font-family:'JetBrains Mono',monospace;color:#E8C46A;font-size:13px;margin-bottom:8px">Langkah 3</div><div style="font-weight:600;font-size:17px;margin-bottom:6px">Kirim bukti ke admin</div><div style="font-size:15px;color:#9AA8C1">Screenshot nomor akun MT5 (jenis Cent) dan bukti deposit, ke admin <a href="https://t.me/phantomgen3_Admin">@phantomgen3_Admin</a>. Setelah akun dipastikan terdaftar lewat link partner kami, AI Agent diaktifkan. Admin tidak pernah meminta password lewat chat.</div></li>
 <li style="border-top:2px solid #E8C46A;padding-top:18px"><div style="font-family:'JetBrains Mono',monospace;color:#E8C46A;font-size:13px;margin-bottom:8px">Langkah 4</div><div style="font-weight:600;font-size:17px;margin-bottom:6px">Pantau dan atur di Telegram</div><div style="font-size:15px;color:#9AA8C1">AI Agent berjalan 24 jam di VPS kami. Anda menerima kartu entry dan close, dan mengatur agent dengan perintah singkat.</div></li>
 </ol>
+<p style="margin:22px 0 0"><a href="panduan" style="display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #2F426A;border-radius:12px;color:#EEF2F8;text-decoration:none">📘 Baca panduan sewa lengkap →</a></p>
 </div>
 </section>
-
 <section id="harga" style="border-top:1px solid #1C2A45;background:#0E1729">
 <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,96px) clamp(20px,5vw,48px)">
 <div style="text-align:center;max-width:640px;margin:0 auto 36px">
@@ -433,285 +395,20 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
 <script>
 (function () {
   "use strict";
-  var DATA = null, FILTER = "all", SHOWN = 20, UNIT = "r";
-  var C = { txt: "#EEF2F8", dim: "#9AA8C1", mute: "#7F8DA8", gold: "#E8C46A", red: "#FF9C92", green: "#6FDCA6",
-            card: "#111B2E", line: "#22314F", deep: "#0B1220" };
-  var STRAT = {
-    ZONE_STRIKE: { name: "Zone Strike", soon: false },
-    SWEEP_HUNTER: { name: "Liquidity Raid", soon: true },
-    SNIPER_DESK: { name: "Sniper Desk", soon: false }
-  };
-
   function $(id) { return document.getElementById(id); }
-  function h(tag, style, kids) {
-    var e = document.createElement(tag);
-    if (style) e.setAttribute("style", style);
-    (kids || []).forEach(function (k) {
-      if (k === null || k === undefined) return;
-      e.appendChild(typeof k === "string" ? document.createTextNode(k) : k);
-    });
-    return e;
-  }
-  function num(v, d) {
-    return Number(v).toLocaleString("id-ID", { minimumFractionDigits: d, maximumFractionDigits: d });
-  }
-  function signed(v, d, suffix) {
-    if (v === null || v === undefined) return "–";
-    var s = num(Math.abs(v), d);
-    return (v > 0 ? "+" : v < 0 ? "−" : "") + s + (suffix || "");
-  }
-  function price(v) { return v === null || v === undefined ? "–" : Number(v).toFixed(2); }
-  function fmtT(iso, withDate) {
-    var o = { timeZone: "Asia/Jakarta", hour: "2-digit", minute: "2-digit", hour12: false };
-    if (withDate) { o.day = "numeric"; o.month = "short"; }
-    return new Intl.DateTimeFormat("id-ID", o).format(new Date(iso)).replace(/\./g, ":").replace(",", "");
-  }
-  function fmtDate(since) {
-    // "2026-11-26" (00:00 WIB) or "2026-11-26T18:00" (WIB unless an offset is given)
-    var hasT = since.indexOf("T") > 0;
-    var iso = hasT ? (/[Zz]|[+-]\d\d:?\d\d$/.test(since.slice(10)) ? since : since + "+07:00") : since + "T00:00:00+07:00";
-    var d = new Date(iso);
-    var s = new Intl.DateTimeFormat("id-ID", { timeZone: "Asia/Jakarta", day: "numeric", month: "short", year: "numeric" }).format(d);
-    return hasT ? s + ", " + fmtT(iso, false) + " WIB" : s;
-  }
-  function dur(m) {
-    if (m === null || m === undefined) return "–";
-    if (m < 60) return m + " menit";
-    if (m < 1440) return Math.floor(m / 60) + " j " + (m % 60) + " m";
-    return Math.floor(m / 1440) + " h " + Math.floor((m % 1440) / 60) + " j";
-  }
-  function color(v) { return v > 0 ? C.green : v < 0 ? C.red : C.dim; }
-  function setText(id, t, col) { var e = $(id); if (!e) return; e.textContent = t; if (col) e.style.color = col; }
-
-  // ------------------------------------------------------------------ stats
-  function renderStats(d) {
-    var s = d.stats, cur = d.currency || "USC";
-    setText("st-net", signed(s.net_pl, 2), color(s.net_pl));
-    setText("st-net-s", cur + ", setelah biaya · " + signed(s.total_r, 2, "R"));
-    setText("st-trades", String(s.trades));
-    setText("st-trades-s", s.wins + " menang · " + s.losses + " kalah · " + s.be + " BE");
-    setText("st-wr", s.win_rate === null ? "–" : num(s.win_rate, 1) + "%");
-    setText("st-pf", s.profit_factor === null ? (s.trades && s.losses === 0 && s.net_pl > 0 ? "∞" : "–") : num(s.profit_factor, 2));
-    setText("st-avgwin", s.avg_win_r === null ? "–" : signed(s.avg_win_r, 2, "R"), s.avg_win_r ? C.green : null);
-    setText("st-avgloss", s.avg_loss_r === null ? "–" : signed(s.avg_loss_r, 2, "R"), s.avg_loss_r ? C.red : null);
-    setText("st-exp", s.expectancy_r === null ? "–" : signed(s.expectancy_r, 2, "R"), color(s.expectancy_r || 0));
-    setText("st-dd", s.max_dd_r ? "−" + num(s.max_dd_r, 2) + "R" : "0R");
-    setText("st-dd-s", s.max_dd_pl ? "−" + num(s.max_dd_pl, 2) + " " + cur + " dari puncak" : "dari puncak kurva");
-    setText("st-dur", dur(s.avg_duration_min));
-    setText("st-streak", String(s.max_loss_streak));
-  }
-
-  function stratCard(key, s) {
-    var meta = STRAT[key] || { name: key, soon: false };
-    if (!s) {
-      return h("div", "background:" + C.card + ";border:1px dashed #2F426A;border-radius:14px;padding:16px 18px", [
-        h("div", "display:flex;justify-content:space-between;align-items:center;margin-bottom:10px", [
-          h("span", "font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;color:#C9D3E6", [meta.name]),
-          h("span", "color:#F1DDA4;font-size:12px;font-weight:600", ["SEGERA"])]),
-        h("div", "font-size:13px;color:" + C.mute, ["Statistik tampil di sini setelah strategi dirilis."])]);
-    }
-    function cell(label, val, col) {
-      return h("div", "", [label, h("div", "font-family:'JetBrains Mono',monospace;font-size:15px;color:" + (col || C.txt), [val])]);
-    }
-    return h("div", "background:" + C.card + ";border:1px solid " + C.line + ";border-radius:14px;padding:16px 18px", [
-      h("div", "display:flex;justify-content:space-between;align-items:center;margin-bottom:10px", [
-        h("span", "font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px", [meta.name]),
-        h("span", "color:" + (key === "ZONE_STRIKE" ? C.green : C.mute) + ";font-size:12px;font-weight:600",
-          [key === "ZONE_STRIKE" ? "AKTIF" : "ARSIP"])]),
-      h("div", "display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;font-size:12px;color:" + C.dim, [
-        cell("Trade", String(s.trades)),
-        cell("Win rate", s.win_rate === null ? "–" : num(s.win_rate, 0) + "%"),
-        cell("Total R", signed(s.total_r, 2, "R"), color(s.total_r)),
-        cell("Rata RR", s.avg_win_r === null ? "–" : num(s.avg_win_r, 2) + "R")])]);
-  }
-
-  function renderStrats(d) {
-    var box = $("strat-cards"); box.textContent = "";
-    var per = d.per_strategy || {};
-    box.appendChild(stratCard("ZONE_STRIKE", per.ZONE_STRIKE || { trades: 0, win_rate: null, total_r: 0, avg_win_r: null }));
-    box.appendChild(stratCard("SWEEP_HUNTER", per.SWEEP_HUNTER || null));
-    Object.keys(per).forEach(function (k) {
-      if (k !== "ZONE_STRIKE" && k !== "SWEEP_HUNTER") box.appendChild(stratCard(k, per[k]));
-    });
-    var lr = document.querySelector('#filters [data-f="SWEEP_HUNTER"]');
-    if (lr && per.SWEEP_HUNTER) lr.textContent = "Liquidity Raid";
-  }
-
-  // ------------------------------------------------------------------ curve
-  function renderCurve(d) {
-    var box = $("curve"); box.textContent = "";
-    setText("curve-since", "· sejak " + fmtDate(d.since));
-    var pts = [{ r: 0, pl: 0, t: null }].concat(d.curve || []);
-    if (pts.length < 2) {
-      box.appendChild(h("div", "height:100%;border:1px dashed #2F426A;border-radius:12px;display:flex;align-items:center;justify-content:center;color:" + C.mute + ";font-size:14px;text-align:center;padding:16px",
-        ["Kurva tampil setelah trade pertama ditutup."]));
-      return;
-    }
-    var W = box.clientWidth || 600, H = box.clientHeight || 200, pl = 52, pr = 10, pt = 10, pb = 22;
-    var vals = pts.map(function (p) { return UNIT === "r" ? p.r : p.pl; });
-    var lo = Math.min.apply(null, vals.concat([0])), hi = Math.max.apply(null, vals.concat([0]));
-    if (hi - lo < 1e-9) { hi += 1; lo -= 1; }
-    var pad = (hi - lo) * 0.08; hi += pad; lo -= pad;
-    function x(i) { return pl + (W - pl - pr) * (i / (pts.length - 1)); }
-    function y(v) { return pt + (H - pt - pb) * (1 - (v - lo) / (hi - lo)); }
-    var NS = "http://www.w3.org/2000/svg";
-    var svg = document.createElementNS(NS, "svg");
-    svg.setAttribute("width", W); svg.setAttribute("height", H); svg.setAttribute("role", "img");
-    svg.setAttribute("aria-label", "Kurva hasil kumulatif dalam " + (UNIT === "r" ? "R" : (d.currency || "USC")));
-    function el(n, a) { var e = document.createElementNS(NS, n); for (var k in a) e.setAttribute(k, a[k]); svg.appendChild(e); return e; }
-    [hi - pad, (hi + lo) / 2, lo + pad].forEach(function (v) {
-      el("line", { x1: pl, x2: W - pr, y1: y(v), y2: y(v), stroke: C.line, "stroke-width": 1 });
-      var t = el("text", { x: pl - 8, y: y(v) + 4, "text-anchor": "end", fill: C.mute, "font-size": 11, "font-family": "JetBrains Mono, monospace" });
-      t.textContent = UNIT === "r" ? num(v, 1) + "R" : num(v, 0);
-    });
-    el("line", { x1: pl, x2: W - pr, y1: y(0), y2: y(0), stroke: "#2F426A", "stroke-width": 1, "stroke-dasharray": "4 4" });
-    var last = vals[vals.length - 1], col = last >= 0 ? C.green : C.red;
-    var dpath = vals.map(function (v, i) { return (i ? "L" : "M") + x(i).toFixed(1) + " " + y(v).toFixed(1); }).join(" ");
-    el("path", { d: dpath + " L" + x(vals.length - 1).toFixed(1) + " " + y(0).toFixed(1) + " L" + x(0).toFixed(1) + " " + y(0).toFixed(1) + " Z",
-                 fill: col, "fill-opacity": 0.08 });
-    el("path", { d: dpath, fill: "none", stroke: col, "stroke-width": 2, "stroke-linejoin": "round" });
-    vals.forEach(function (v, i) {
-      if (!i) return;
-      var c = el("circle", { cx: x(i), cy: y(v), r: pts.length > 60 ? 0 : 3, fill: col });
-      var ttl = document.createElementNS(NS, "title");
-      ttl.textContent = fmtT(pts[i].t, true) + " WIB · " + (UNIT === "r" ? signed(v, 2, "R") : signed(v, 2, " " + (d.currency || "USC")));
-      c.appendChild(ttl);
-    });
-    var lt = el("text", { x: W - pr, y: H - 4, "text-anchor": "end", fill: C.dim, "font-size": 11, "font-family": "JetBrains Mono, monospace" });
-    lt.textContent = (pts.length - 1) + " trade";
-    box.appendChild(svg);
-  }
-
-  // ----------------------------------------------------------------- trades
-  var KDOT = { entry: C.gold, tp1: C.green, be: "#8FB3FF", win: C.green, loss: C.red, be_close: "#8FB3FF" };
-
-  function tradeRow(t, open) {
-    var side = t.side === "BUY";
-    var rCol = t.result === "WIN" ? C.green : t.result === "LOSS" ? C.red : "#8FB3FF";
-    var badge = t.result === "BE" ? h("span", "font-size:11px;color:#8FB3FF;border:1px solid #2F426A;border-radius:999px;padding:2px 8px", ["BE"]) : null;
-    var sum = h("summary", "display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;padding:14px 18px;min-height:56px", [
-      h("span", "font-family:'JetBrains Mono',monospace;font-size:13px;color:#B6C2D9;min-width:118px", [fmtT(t.entry_time, true)]),
-      h("span", "background:" + (side ? "#16302A" : "#2A1C1F") + ";color:" + (side ? C.green : C.red) + ";font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px", [t.side]),
-      h("span", "font-family:'JetBrains Mono',monospace;font-size:11px;color:" + C.gold + ";border:1px solid #5A4A1A;border-radius:999px;padding:3px 9px", [t.name]),
-      badge,
-      h("span", "font-family:'JetBrains Mono',monospace;font-size:13px;color:" + C.txt + ";flex:1 1 170px", [price(t.entry) + " → " + price(t.exit)]),
-      h("span", "font-size:13px;color:" + C.dim + ";min-width:84px", [dur(t.duration_min)]),
-      h("span", "font-family:'JetBrains Mono',monospace;font-size:14px;color:" + rCol + ";min-width:64px;text-align:right", [signed(t.r, 2, "R")]),
-      h("span", "font-family:'JetBrains Mono',monospace;font-size:13px;color:" + rCol + ";min-width:92px;text-align:right", [signed(t.pl, 2, " " + (DATA.currency || "USC"))])
-    ]);
-    var chev = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    chev.setAttribute("class", "chev"); chev.setAttribute("width", "20"); chev.setAttribute("height", "20");
-    chev.setAttribute("viewBox", "0 0 24 24"); chev.setAttribute("fill", "none"); chev.setAttribute("stroke", C.gold);
-    chev.setAttribute("stroke-width", "2"); chev.setAttribute("aria-hidden", "true");
-    chev.setAttribute("style", "transition:transform .2s;flex:none");
-    var cp = document.createElementNS("http://www.w3.org/2000/svg", "path"); cp.setAttribute("d", "M6 9l6 6 6-6"); chev.appendChild(cp);
-    sum.appendChild(chev);
-
-    function box(label, val, col) {
-      return h("div", "background:" + C.deep + ";border-radius:10px;padding:10px 12px", [
-        h("div", "font-size:11px;color:" + C.dim, [label]),
-        h("div", "font-family:'JetBrains Mono',monospace;font-size:14px;color:" + (col || C.txt), [val])]);
-    }
-    var tp2Label = "TP2 · likuiditas" + (t.tp2_r ? " (" + num(t.tp2_r, 2) + "R)" : "");
-    var grid = h("div", "display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin-bottom:14px", [
-      box("Entry", price(t.entry)), box("Stop loss", price(t.sl), C.red),
-      box(t.partial_plan === "TP1_FULL" ? "TP" : "TP1 · 1R", price(t.tp1), C.green),
-      t.partial_plan === "TP1_FULL" ? null : box(tp2Label, price(t.tp2), C.green),
-      box("Exit", price(t.exit)), box("Lot", t.lot),
-      box("Risiko", t.risk_pct === null || t.risk_pct === undefined ? "–" : num(t.risk_pct, 2) + "%"),
-      box("Durasi", dur(t.duration_min))]);
-    var left = h("div", "flex:1 1 300px;min-width:0", [grid,
-      h("div", "font-size:12px;color:" + C.gold + ";font-weight:600;margin-bottom:4px", ["Alasan eksekusi"]),
-      h("p", "margin:0;font-size:14px;line-height:1.65;color:#C9D3E6", [(t.reason ? t.reason + " " : "") + (t.result_text || "")])]);
-    if (t.macro && t.macro.length) {
-      left.appendChild(h("div", "font-size:12px;color:" + C.gold + ";font-weight:600;margin:12px 0 4px", ["Konteks makro saat entry"]));
-      var ul = h("ul", "margin:0;padding-left:18px;font-size:13px;line-height:1.6;color:" + C.dim, []);
-      t.macro.forEach(function (m) { ul.appendChild(h("li", "", [m])); });
-      left.appendChild(ul);
-    }
-    var ol = h("ol", "list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:13px", []);
-    (t.timeline || []).forEach(function (e) {
-      var dot = e.k === "be" && t.result === "BE" ? "#8FB3FF" : (KDOT[e.k] || C.mute);
-      ol.appendChild(h("li", "display:flex;gap:12px;align-items:flex-start", [
-        h("span", "width:9px;height:9px;border-radius:50%;background:" + dot + ";margin-top:7px;flex:none", []),
-        h("span", "", [h("span", "font-family:'JetBrains Mono',monospace;color:" + C.txt, [fmtT(e.t, false)]), " ",
-                      h("span", "color:" + C.dim, [e.text])])]));
-    });
-    var right = h("div", "flex:0 1 260px;min-width:0", [
-      h("div", "font-size:12px;color:" + C.gold + ";font-weight:600;margin-bottom:8px", ["Jalannya posisi (WIB)"]), ol]);
-    var body = h("div", "border-top:1px solid " + C.line + ";padding:16px 18px 18px;display:flex;flex-wrap:wrap;gap:18px 28px", [left, right]);
-    var det = h("details", "background:" + C.card + ";border:1px solid " + C.line + ";border-radius:14px", [sum, body]);
-    if (open) det.open = true;
-    return det;
-  }
-
-  function matches(t) {
-    if (FILTER === "all") return true;
-    if (FILTER === "WIN" || FILTER === "LOSS" || FILTER === "BE") return t.result === FILTER;
-    return t.strategy === FILTER;
-  }
-
-  function renderTrades() {
-    var box = $("trades"); box.textContent = "";
-    var list = (DATA.trades || []).filter(matches);
-    if (!list.length) {
-      var msg = (DATA.trades || []).length ? "Belum ada trade untuk filter ini."
-        : "Belum ada trade yang ditutup sejak " + fmtDate(DATA.since) + ". Trade pertama tampil otomatis di sini.";
-      box.appendChild(h("div", "border:1px dashed #2F426A;border-radius:14px;padding:16px 18px;color:" + C.mute + ";font-size:14px;text-align:center", [msg]));
-    }
-    list.slice(0, SHOWN).forEach(function (t, i) { box.appendChild(tradeRow(t, i === 0 && FILTER === "all")); });
-    var more = $("more");
-    more.style.display = list.length > SHOWN ? "flex" : "none";
-    more.textContent = "Tampilkan lebih banyak (" + (list.length - SHOWN) + " lagi)";
-  }
-
-  // ------------------------------------------------------------------- load
-  function render(d) {
-    DATA = d;
-    $("au-msg").style.display = "none";
-    var gen = new Date(d.generated_at), ageH = (Date.now() - gen.getTime()) / 36e5;
-    $("au-dot").style.background = ageH < 7 ? "#5FD39B" : "#F1DDA4";
-    setText("au-updated", "Diperbarui otomatis · " + fmtT(d.generated_at, true) + " WIB");
-    setText("au-since", fmtDate(d.since));
-    setText("au-open", d.open_positions ? d.open_positions + " posisi sedang berjalan · rincian tampil setelah ditutup" : "");
-    renderStats(d); renderStrats(d); renderCurve(d); renderTrades();
-  }
-
-  function load() {
-    fetch("audit.json?t=" + Date.now(), { cache: "no-store" })
-      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(render)
-      .catch(function () {
-        if (DATA) return;                       // keep the last good data on a failed refresh
-        var m = $("au-msg");
-        m.textContent = "Data live sedang disiapkan oleh agent. Muat ulang halaman ini beberapa menit lagi.";
-        m.style.display = "block";
-        setText("au-updated", "Menunggu data dari agent");
-        renderStrats({ per_strategy: {} });
-      });
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll("#filters .chip").forEach(function (b) {
-      b.addEventListener("click", function () {
-        document.querySelectorAll("#filters .chip").forEach(function (x) { x.classList.remove("on"); x.setAttribute("aria-pressed", "false"); });
-        b.classList.add("on"); b.setAttribute("aria-pressed", "true");
-        FILTER = b.getAttribute("data-f"); SHOWN = 20;
-        if (DATA) renderTrades();
-      });
-    });
-    document.querySelectorAll("[data-unit]").forEach(function (b) {
-      b.addEventListener("click", function () {
-        document.querySelectorAll("[data-unit]").forEach(function (x) { x.classList.remove("on"); });
-        b.classList.add("on"); UNIT = b.getAttribute("data-unit");
-        if (DATA) renderCurve(DATA);
-      });
-    });
-    $("more").addEventListener("click", function () { SHOWN += 20; renderTrades(); });
-    var rt; window.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(function () { if (DATA) renderCurve(DATA); }, 150); });
-    load();
-    setInterval(load, 5 * 60 * 1000);
-  });
+  function num(v, d) { return Number(v).toLocaleString("id-ID", { minimumFractionDigits: d, maximumFractionDigits: d }); }
+  function signed(v, d, s) { if (v === null || v === undefined) return "–"; return (v > 0 ? "+" : v < 0 ? "−" : "") + num(Math.abs(v), d) + (s || ""); }
+  function col(v) { return v > 0 ? "#6FDCA6" : v < 0 ? "#FF9C92" : "#EEF2F8"; }
+  function set(id, t, c) { var e = $(id); if (!e) return; e.textContent = t; if (c) e.style.color = c; }
+  fetch("audit.json?t=" + Date.now(), { cache: "no-store" }).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (d) {
+    var s = d.stats;
+    set("tz-net", signed(s.net_pl, 2), col(s.net_pl));
+    set("tz-r", signed(s.total_r, 2, "R"), col(s.total_r));
+    set("tz-trades", String(s.trades));
+    set("tz-wr", s.win_rate === null ? "–" : num(s.win_rate, 1) + "%");
+    var t = new Intl.DateTimeFormat("id-ID", { timeZone: "Asia/Jakarta", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", hour12: false }).format(new Date(d.generated_at)).replace(/\./g, ":").replace(",", "");
+    set("tz-upd", "Diperbarui otomatis · " + t + " WIB");
+  }).catch(function () { set("tz-upd", "Data live sedang disiapkan"); });
 })();
 </script>
 </body>
