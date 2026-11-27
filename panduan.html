@@ -5,65 +5,67 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Panduan Sewa · Phantom Gen 3 AI Agent</title>
 <meta name="description" content="Penjelasan cara kerja Phantom Gen 3 AI Agent dan langkah lengkap untuk mulai memakainya di akun Vantage Cent Anda.">
-<meta name="theme-color" content="#0B1220">
+<meta name="theme-color" content="#060908">
 <meta property="og:title" content="Panduan Sewa · Phantom Gen 3 AI Agent">
 <meta property="og:description" content="Apa itu Phantom Gen 3, cara kerjanya, dan langkah mulai memakainya.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect x='1' y='1' width='26' height='26' rx='7' fill='%230B1220' stroke='%23E8C46A' stroke-width='1.5'/%3E%3Cpath d='M8 19V9h6.5a3.5 3.5 0 010 7H8' fill='none' stroke='%23E8C46A' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:image" content="https://phantomgen3.com/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#0B1220;color:#EEF2F8;font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:#E8C46A}
-a:focus-visible,summary:focus-visible{outline:2px solid #E8C46A;outline-offset:2px}
+body{margin:0;background:#060908;color:#EEF2F0;font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#34D399}
+a:focus-visible,summary:focus-visible{outline:2px solid #34D399;outline-offset:2px}
 .wrap{max-width:760px;margin:0 auto;padding:0 18px}
-header{border-bottom:1px solid #1C2A45;position:sticky;top:0;background:rgba(11,18,32,.92);backdrop-filter:blur(8px);z-index:5}
+header{border-bottom:1px solid #161F1B;position:sticky;top:0;background:rgba(6,9,8,.9);backdrop-filter:blur(8px);z-index:5}
 header .wrap{display:flex;justify-content:space-between;align-items:center;min-height:56px;gap:12px}
-.brand{display:flex;align-items:center;gap:10px;color:#EEF2F8;text-decoration:none;font:600 16px 'Space Grotesk',sans-serif}
-.brand small{font:500 11px 'JetBrains Mono',monospace;color:#9AA8C1;letter-spacing:1px}
-.hbtn{border:1px solid #2F426A;color:#EEF2F8;text-decoration:none;border-radius:10px;padding:8px 12px;font-size:13px;white-space:nowrap}
-.kick{font:500 12px 'JetBrains Mono',monospace;color:#E8C46A;letter-spacing:1.5px;margin:0 0 8px}
+.brand{display:flex;align-items:center;gap:10px;color:#EEF2F0;text-decoration:none;font:600 16px 'Space Grotesk',sans-serif}
+.brand small{font:500 11px 'JetBrains Mono',monospace;color:#9BA7A1;letter-spacing:1px}
+.hbtn{border:1px solid #34453D;color:#EEF2F0;text-decoration:none;border-radius:10px;padding:8px 12px;font-size:13px;white-space:nowrap}
+.kick{font:500 12px 'JetBrains Mono',monospace;color:#34D399;letter-spacing:1.5px;margin:0 0 8px}
 h1{font:600 clamp(28px,6vw,40px)/1.15 'Space Grotesk',sans-serif;margin:0 0 12px}
 h2{font:600 clamp(21px,4.5vw,26px)/1.25 'Space Grotesk',sans-serif;margin:0 0 10px}
 h3{font:600 17px/1.35 Inter,sans-serif;margin:0 0 4px}
-p{margin:0 0 12px;color:#C9D3E6}
-.lead{font-size:17px;color:#B6C2D9}
-section{padding:36px 0;border-bottom:1px solid #1C2A45}
-.note{background:#2A2410;border:1px solid #5A4A1A;color:#F1DDA4;border-radius:12px;padding:12px 14px;font-size:14px;margin:16px 0 0}
+p{margin:0 0 12px;color:#CAD2CE}
+.lead{font-size:17px;color:#B3BEB9}
+section{padding:36px 0;border-bottom:1px solid #161F1B}
+.note{background:#141B18;border:1px solid #1F5C41;color:#D3DBD7;border-radius:12px;padding:12px 14px;font-size:14px;margin:16px 0 0}
 .ok{background:#13291F;border:1px solid #1F4A36;color:#BDEFD4;border-radius:12px;padding:12px 14px;font-size:14px;margin:16px 0 0}
 .toc{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
-.toc a{font-size:13px;text-decoration:none;color:#C9D3E6;border:1px solid #2F426A;border-radius:999px;padding:6px 12px}
+.toc a{font-size:13px;text-decoration:none;color:#CAD2CE;border:1px solid #34453D;border-radius:999px;padding:6px 12px}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
-.card{background:#111B2E;border:1px solid #22314F;border-radius:12px;padding:14px}
-.card p{font-size:14px;margin:0;color:#9AA8C1}
+.card{background:#0E1412;border:1px solid #1E2A25;border-radius:12px;padding:14px}
+.card p{font-size:14px;margin:0;color:#9BA7A1}
 .card h3{font-size:15px}
 .flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:14px 0 4px;font:500 12px 'JetBrains Mono',monospace}
-.flow span{background:#111B2E;border:1px solid #22314F;border-radius:8px;padding:6px 9px;color:#C9D3E6}
-.flow i{color:#E8C46A;font-style:normal}
+.flow span{background:#0E1412;border:1px solid #1E2A25;border-radius:8px;padding:6px 9px;color:#CAD2CE}
+.flow i{color:#34D399;font-style:normal}
 table{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px}
-td{padding:9px 0;border-bottom:1px solid #1C2A45;vertical-align:top;color:#C9D3E6}
-td:first-child{color:#9AA8C1;width:42%;padding-right:12px}
+td{padding:9px 0;border-bottom:1px solid #161F1B;vertical-align:top;color:#CAD2CE}
+td:first-child{color:#9BA7A1;width:42%;padding-right:12px}
 ol.steps{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:12px;counter-reset:s}
-ol.steps>li{background:#111B2E;border:1px solid #22314F;border-radius:14px;padding:16px 16px 14px 60px;position:relative;counter-increment:s}
-ol.steps>li::before{content:counter(s);position:absolute;left:16px;top:15px;width:30px;height:30px;border-radius:50%;background:#E8C46A;color:#241B04;font:600 15px/30px 'Space Grotesk',sans-serif;text-align:center}
-ol.steps p,ol.steps li li{font-size:14.5px;color:#B6C2D9}
+ol.steps>li{background:#0E1412;border:1px solid #1E2A25;border-radius:14px;padding:16px 16px 14px 60px;position:relative;counter-increment:s}
+ol.steps>li::before{content:counter(s);position:absolute;left:16px;top:15px;width:30px;height:30px;border-radius:50%;background:#34D399;color:#02140B;font:600 15px/30px 'Space Grotesk',sans-serif;text-align:center}
+ol.steps p,ol.steps li li{font-size:14.5px;color:#B3BEB9}
 ol.steps ul{margin:6px 0 8px;padding-left:18px}
 ol.steps li li{margin:3px 0}
 .tag{display:inline-block;font:500 11px 'JetBrains Mono',monospace;border-radius:999px;padding:2px 8px;margin-left:6px;vertical-align:2px}
-.tag.soon{background:#2A2410;color:#F1DDA4}
+.tag.soon{background:#141B18;color:#D3DBD7}
 .tag.you{background:#16302A;color:#6FDCA6}
-.tag.adm{background:#1A2540;color:#9DB8FF}
-code{font:500 13px 'JetBrains Mono',monospace;background:#0E1729;border:1px solid #22314F;border-radius:6px;padding:1px 6px;color:#E8C46A}
-details{background:#111B2E;border:1px solid #22314F;border-radius:12px;padding:2px 14px;margin-top:8px}
+.tag.adm{background:#15201B;color:#C3CCC8}
+code{font:500 13px 'JetBrains Mono',monospace;background:#0A0F0D;border:1px solid #1E2A25;border-radius:6px;padding:1px 6px;color:#34D399}
+details{background:#0E1412;border:1px solid #1E2A25;border-radius:12px;padding:2px 14px;margin-top:8px}
 summary{cursor:pointer;min-height:46px;display:flex;align-items:center;font-weight:500}
 details p{font-size:14.5px}
 .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border-radius:12px;font-weight:600;text-decoration:none}
-.btn.pri{background:#E8C46A;color:#241B04}
-.btn.sec{border:1px solid #2F426A;color:#EEF2F8;font-weight:500}
-footer{padding:28px 0 40px;font-size:12.5px;color:#7F8DA8}
-footer p{color:#7F8DA8;font-size:12.5px}
+.btn.pri{background:#34D399;color:#02140B}
+.btn.sec{border:1px solid #34453D;color:#EEF2F0;font-weight:500}
+footer{padding:28px 0 40px;font-size:12.5px;color:#76827C}
+footer p{color:#76827C;font-size:12.5px}
 @media (max-width:520px){
   body{font-size:15px}
   .grid{grid-template-columns:1fr}
@@ -71,12 +73,16 @@ footer p{color:#7F8DA8;font-size:12.5px}
   ol.steps>li::before{left:12px;top:13px;width:28px;height:28px;line-height:28px;font-size:14px}
   .hbtn{display:none}
 }
+
+h1{background:linear-gradient(180deg,#F5F8F6 0%,#B9C3BF 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+body{background-image:radial-gradient(900px 420px at 15% -80px,rgba(52,211,153,.07),transparent 70%);background-repeat:no-repeat}
+::selection{background:rgba(52,211,153,.3)}
 </style>
 </head>
 <body>
 <header><div class="wrap">
   <a class="brand" href="/" aria-label="Phantom Gen 3, halaman utama">
-    <svg width="26" height="26" viewBox="0 0 28 28" aria-hidden="true"><rect x="1" y="1" width="26" height="26" rx="7" fill="#0B1220" stroke="#E8C46A" stroke-width="1.5"/><path d="M8 19V9h6.5a3.5 3.5 0 010 7H8" fill="none" stroke="#E8C46A" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <img src="/emblem.jpg" width="34" height="34" alt="" style="border-radius:50%;display:block;box-shadow:0 0 0 1px #1E2A25,0 0 14px rgba(52,211,153,.18)">
     <span>Phantom Gen 3 <small>PANDUAN</small></span>
   </a>
   <a class="hbtn" href="/audit">📊 Lihat audit live</a>

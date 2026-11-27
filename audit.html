@@ -5,34 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Audit Live · Phantom Gen 3</title>
 <meta name="description" content="AI Agent trading emas XAUUSD dengan strategi Zone Strike, analisa makro dan AI Deep Reflection. Semua trade agent tercatat terbuka dengan alasan eksekusinya. Beta gratis 1 bulan, 10 slot.">
-<meta name="theme-color" content="#0B1220">
+<meta name="theme-color" content="#060908">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Phantom Gen 3 — AI Agent emas yang menjelaskan setiap entry">
 <meta property="og:description" content="AI Agent trading emas XAUUSD dengan strategi Zone Strike, analisa makro dan AI Deep Reflection. Semua trade agent tercatat terbuka dengan alasan eksekusinya. Beta gratis 1 bulan, 10 slot.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect x='1' y='1' width='26' height='26' rx='7' fill='%230B1220' stroke='%23E8C46A' stroke-width='1.5'/%3E%3Cpath d='M8 19V9h6.5a3.5 3.5 0 010 7H8' fill='none' stroke='%23E8C46A' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:image" content="https://phantomgen3.com/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#0B1220}
+body{margin:0;background:#060908}
 *{box-sizing:border-box}
-a{color:#E8C46A;text-decoration:none}a:hover{color:#F3D88F}
+a{color:#34D399;text-decoration:none}a:hover{color:#E6ECE9}
 details summary{cursor:pointer;list-style:none}
 details summary::-webkit-details-marker{display:none}
 details[open] .fq-plus{transform:rotate(45deg)}
 details[open] .chev{transform:rotate(180deg)}
 
-.tile{background:#111B2E;border:1px solid #22314F;border-radius:14px;padding:16px 18px}
-.tl{font-size:12px;color:#9AA8C1}.tv{font-family:'JetBrains Mono',monospace;font-size:22px;color:#EEF2F8;margin-top:2px}
-.ts{font-size:12px;color:#7F8DA8;margin-top:2px}
-.chip{background:transparent;color:#B6C2D9;border:1px solid #2F426A;border-radius:999px;padding:8px 14px;font:500 13px Inter,sans-serif;min-height:36px;cursor:pointer}
-.chip.on{background:#E8C46A;color:#241B04;border-color:#E8C46A;font-weight:600}
-.chip:focus-visible,a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #E8C46A;outline-offset:2px}
+.tile{background:#0E1412;border:1px solid #1E2A25;border-radius:14px;padding:16px 18px}
+.tl{font-size:12px;color:#9BA7A1}.tv{font-family:'JetBrains Mono',monospace;font-size:22px;color:#EEF2F0;margin-top:2px}
+.ts{font-size:12px;color:#76827C;margin-top:2px}
+.chip{background:transparent;color:#B3BEB9;border:1px solid #34453D;border-radius:999px;padding:8px 14px;font:500 13px Inter,sans-serif;min-height:36px;cursor:pointer}
+.chip.on{background:#34D399;color:#02140B;border-color:#34D399;font-weight:600}
+.chip:focus-visible,a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #34D399;outline-offset:2px}
 @media (max-width:560px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}.tile{padding:12px 14px}.tv{font-size:19px}}
 html{scroll-behavior:smooth}section[id]{scroll-margin-top:12px}
 
 section > div[style*="padding:clamp(56px,8vw,96px)"]{padding:clamp(40px,6vw,72px) clamp(16px,4vw,40px)!important}
-div[style*="background:#111B2E"]{padding:18px!important}
-div[style*="background:#111B2E"][style*="border-radius:20px"]{border-radius:16px!important}
+div[style*="background:#0E1412"]{padding:18px!important}
+div[style*="background:#0E1412"][style*="border-radius:20px"]{border-radius:16px!important}
 h2[style*="Space Grotesk"]{font-size:clamp(24px,3vw,38px)!important}
 p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
 .g-feat{gap:12px!important}
@@ -46,7 +48,7 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
   h2[style*="Space Grotesk"]{font-size:23px!important;line-height:1.2!important}
   h3[style*="Space Grotesk"]{font-size:19px!important}
   p[style*="font-size:17px"]{font-size:15px!important}
-  div[style*="background:#111B2E"]{padding:14px!important;border-radius:14px!important}
+  div[style*="background:#0E1412"]{padding:14px!important;border-radius:14px!important}
   .g-feat,.g-steps,.g-risk,.g-daftar{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
   .g-feat > div{gap:6px!important}
   .g-feat > div > div:first-child > span:last-child{display:none!important}
@@ -61,48 +63,52 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
   .tv{font-size:16px!important}
   .tl,.ts{font-size:10.5px!important}
   #strat-cards{gap:10px!important}
-  span[style*="font-size:12px;background:#0B1220"]{font-size:11px!important;padding:4px 9px!important}
+  span[style*="font-size:12px;background:#060908"]{font-size:11px!important;padding:4px 9px!important}
 }
+
+h1{background:linear-gradient(180deg,#F5F8F6 0%,#B9C3BF 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+body{background-image:radial-gradient(900px 420px at 15% -80px,rgba(52,211,153,.07),transparent 70%);background-repeat:no-repeat}
+::selection{background:rgba(52,211,153,.3)}
 </style>
 </head>
 <body>
-<noscript><div style="background:#1A1709;color:#F1DDA4;padding:12px 20px;font:14px Inter,sans-serif">Aktifkan JavaScript untuk melihat data audit live.</div></noscript>
-<div style="background:#0B1220;color:#EEF2F8;font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.65;min-height:100%">
+<noscript><div style="background:#0E1412;color:#D3DBD7;padding:12px 20px;font:14px Inter,sans-serif">Aktifkan JavaScript untuk melihat data audit live.</div></noscript>
+<div style="background:#060908;color:#EEF2F0;font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.65;min-height:100%">
 
-<header style="border-bottom:1px solid #1C2A45;background:#0B1220">
+<header style="border-bottom:1px solid #161F1B;background:#060908">
 <div style="max-width:1180px;margin:0 auto;padding:16px clamp(20px,5vw,48px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px">
-<a href="/" style="display:flex;align-items:center;gap:10px;color:#EEF2F8">
-<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect x="1" y="1" width="26" height="26" rx="7" stroke="#E8C46A" stroke-width="1.5"/><path d="M8 19V9h6.5a3.5 3.5 0 010 7H8" stroke="#E8C46A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-<span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;letter-spacing:.5px">Phantom <span style="color:#E8C46A">Gen 3</span></span>
+<a href="/" style="display:flex;align-items:center;gap:10px;color:#EEF2F0">
+<img src="/emblem.jpg" width="34" height="34" alt="" style="border-radius:50%;display:block;box-shadow:0 0 0 1px #1E2A25,0 0 14px rgba(52,211,153,.18)">
+<span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;letter-spacing:.5px">Phantom <span style="color:#34D399">Gen 3</span></span>
 </a>
 <nav aria-label="Navigasi utama" style="display:flex;flex-wrap:wrap;gap:6px 22px;font-size:14px">
-<a href="/#teknologi" style="color:#B6C2D9">Teknologi</a>
-<a href="/#cara-kerja" style="color:#B6C2D9">Cara kerja</a>
-<a href="/#risiko" style="color:#B6C2D9">Risiko</a>
-<a href="audit" aria-current="page" style="color:#B6C2D9">Hasil live</a>
-<a href="panduan" style="color:#B6C2D9">Panduan</a>
-<a href="/#harga" style="color:#B6C2D9">Harga</a>
-<a href="/#faq" style="color:#B6C2D9">FAQ</a>
+<a href="/#teknologi" style="color:#B3BEB9">Teknologi</a>
+<a href="/#cara-kerja" style="color:#B3BEB9">Cara kerja</a>
+<a href="/#risiko" style="color:#B3BEB9">Risiko</a>
+<a href="audit" aria-current="page" style="color:#B3BEB9">Hasil live</a>
+<a href="panduan" style="color:#B3BEB9">Panduan</a>
+<a href="/#harga" style="color:#B3BEB9">Harga</a>
+<a href="/#faq" style="color:#B3BEB9">FAQ</a>
 </nav>
-<a href="https://t.me/phantomgen3" style="background:#E8C46A;color:#241B04;font-weight:600;font-size:14px;padding:11px 18px;border-radius:10px;min-height:44px;display:inline-flex;align-items:center">Gabung beta gratis</a>
+<a href="https://t.me/phantomgen3" style="background:#34D399;color:#02140B;font-weight:600;font-size:14px;padding:11px 18px;border-radius:10px;min-height:44px;display:inline-flex;align-items:center">Gabung beta gratis</a>
 </div>
 </header>
-<section id="hasil" style="border-top:1px solid #1C2A45;background:#0E1729">
+<section id="hasil" style="border-top:1px solid #161F1B;background:#0A0F0D">
 <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,96px) clamp(20px,5vw,48px)">
 <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:28px">
 <div style="max-width:660px">
-<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#E8C46A;letter-spacing:1.5px;margin-bottom:10px">AUDIT LIVE · 100% ALGO TRADING</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#34D399;letter-spacing:1.5px;margin-bottom:10px">AUDIT LIVE · 100% ALGO TRADING</div>
 <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.4vw,42px);line-height:1.15;margin:0 0 12px">Setiap trade AI Agent tercatat, lengkap dengan alasannya.</h2>
-<p style="color:#B6C2D9;margin:0">Data dikirim langsung oleh agent dan hanya memuat trade Phantom yang sudah ditutup, menang, BE maupun kalah. Trade manual, deposit dan penarikan tidak ikut dihitung. Data dimulai saat Zone Strike aktif (<span id="au-since">26 Nov 2026</span>); trade strategi lama Phantom sebelum itu tidak ditampilkan. Klik sebuah trade untuk melihat alasan eksekusi, SL, TP dan jalannya posisi.</p>
+<p style="color:#B3BEB9;margin:0">Data dikirim langsung oleh agent dan hanya memuat trade Phantom yang sudah ditutup, menang, BE maupun kalah. Trade manual, deposit dan penarikan tidak ikut dihitung. Data dimulai saat Zone Strike aktif (<span id="au-since">26 Nov 2026</span>); trade strategi lama Phantom sebelum itu tidak ditampilkan. Klik sebuah trade untuk melihat alasan eksekusi, SL, TP dan jalannya posisi.</p>
 </div>
 <div style="display:flex;flex-direction:column;align-items:flex-start;gap:8px">
-<span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#B6C2D9"><span id="au-dot" style="width:8px;height:8px;border-radius:50%;background:#7F8DA8;display:inline-block"></span><span id="au-updated">Memuat data live…</span></span>
-<span id="au-open" style="font-size:13px;color:#9AA8C1"></span>
-<a href="audit.json" target="_blank" rel="noopener" style="border:1px solid #2F426A;color:#EEF2F8;padding:11px 16px;border-radius:12px;font-size:14px;min-height:44px;display:inline-flex;align-items:center;gap:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8C46A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Data mentah (audit.json)</a>
+<span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#B3BEB9"><span id="au-dot" style="width:8px;height:8px;border-radius:50%;background:#76827C;display:inline-block"></span><span id="au-updated">Memuat data live…</span></span>
+<span id="au-open" style="font-size:13px;color:#9BA7A1"></span>
+<a href="audit.json" target="_blank" rel="noopener" style="border:1px solid #34453D;color:#EEF2F0;padding:11px 16px;border-radius:12px;font-size:14px;min-height:44px;display:inline-flex;align-items:center;gap:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Data mentah (audit.json)</a>
 </div>
 </div>
 
-<div id="au-msg" role="status" style="display:none;border:1px dashed #2F426A;border-radius:14px;padding:16px 18px;color:#9AA8C1;font-size:14px;text-align:center;margin-bottom:16px"></div>
+<div id="au-msg" role="status" style="display:none;border:1px dashed #34453D;border-radius:14px;padding:16px 18px;color:#9BA7A1;font-size:14px;text-align:center;margin-bottom:16px"></div>
 
 <div class="tiles" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:16px">
 <div class="tile"><div class="tl">Total pips</div><div class="tv" id="st-net">–</div><div class="ts" id="st-net-s">pips</div></div>
@@ -119,9 +125,9 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
 
 <div id="strat-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-bottom:16px"></div>
 
-<div style="background:#111B2E;border:1px solid #22314F;border-radius:16px;padding:20px;margin-bottom:24px">
+<div style="background:#0E1412;border:1px solid #1E2A25;border-radius:16px;padding:20px;margin-bottom:24px">
 <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px;font-size:14px">
-<span><span style="font-weight:600">Kurva hasil kumulatif</span> <span id="curve-since" style="color:#9AA8C1"></span></span>
+<span><span style="font-weight:600">Kurva hasil kumulatif</span> <span id="curve-since" style="color:#9BA7A1"></span></span>
 <div role="group" aria-label="Satuan kurva" style="display:flex;gap:6px">
 <button type="button" class="chip on" data-unit="pips">Pips</button><button type="button" class="chip" data-unit="r">R</button>
 </div>
@@ -141,15 +147,15 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
 </div>
 </div>
 <div id="trades" style="display:grid;gap:10px"></div>
-<button type="button" id="more" style="display:none;margin:14px auto 0;background:transparent;color:#EEF2F8;border:1px solid #2F426A;border-radius:12px;padding:12px 18px;font:500 14px Inter,sans-serif;min-height:44px">Tampilkan lebih banyak</button>
-<p style="font-size:12px;color:#7F8DA8;margin:16px 0 0"><b style="color:#9AA8C1">10 point = 1 pip</b> (contoh: 3800.00 → 3800.10 = 1 pip). Pips = pergerakan harga dari entry ke exit, ditimbang lot saat separuh posisi ditutup di TP1, sebelum biaya. R = hasil bersih dibagi risiko awal trade, setelah spread, komisi dan swap. Posisi yang masih berjalan tidak ditampilkan rinciannya sampai ditutup.</p>
+<button type="button" id="more" style="display:none;margin:14px auto 0;background:transparent;color:#EEF2F0;border:1px solid #34453D;border-radius:12px;padding:12px 18px;font:500 14px Inter,sans-serif;min-height:44px">Tampilkan lebih banyak</button>
+<p style="font-size:12px;color:#76827C;margin:16px 0 0"><b style="color:#9BA7A1">10 point = 1 pip</b> (contoh: 3800.00 → 3800.10 = 1 pip). Pips = pergerakan harga dari entry ke exit, ditimbang lot saat separuh posisi ditutup di TP1, sebelum biaya. R = hasil bersih dibagi risiko awal trade, setelah spread, komisi dan swap. Posisi yang masih berjalan tidak ditampilkan rinciannya sampai ditutup.</p>
 </div>
 </section>
-<section aria-labelledby="disclaimer-title" style="border-top:1px solid #1C2A45;background:#0E1729">
+<section aria-labelledby="disclaimer-title" style="border-top:1px solid #161F1B;background:#0A0F0D">
 <div style="max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,64px) clamp(20px,5vw,48px)">
-<div style="border:1px solid #5A4A1A;background:#1A1709;border-radius:18px;padding:clamp(20px,3vw,32px)">
-<h2 id="disclaimer-title" style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;margin:0 0 12px;color:#F1DDA4;display:flex;align-items:center;gap:10px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F1DDA4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.01"/></svg>Peringatan risiko</h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px 28px;font-size:14px;line-height:1.7;color:#D9CDA6">
+<div style="border:1px solid #1F5C41;background:#0E1412;border-radius:18px;padding:clamp(20px,3vw,32px)">
+<h2 id="disclaimer-title" style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;margin:0 0 12px;color:#D3DBD7;display:flex;align-items:center;gap:10px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D3DBD7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.01"/></svg>Peringatan risiko</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px 28px;font-size:14px;line-height:1.7;color:#BCC6C1">
 <p style="margin:0">Trading CFD emas (XAUUSD) berisiko tinggi dan dapat menyebabkan kehilangan sebagian atau seluruh modal. Jangan memakai dana yang tidak siap Anda tanggung kehilangannya.</p>
 <p style="margin:0">Hasil masa lalu dan hasil simulasi tidak menjamin hasil di masa depan. Tidak ada jaminan profit dalam bentuk apa pun.</p>
 <p style="margin:0">Risiko per trade, batas loss harian dan pengaturan lain ditentukan oleh penyewa. Penyewa bertanggung jawab penuh atas pengaturan yang dipilih dan hasil akunnya.</p>
@@ -159,11 +165,11 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
 </div>
 </div>
 </section>
-<footer style="border-top:1px solid #1C2A45">
-<div style="max-width:1180px;margin:0 auto;padding:32px clamp(20px,5vw,48px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;font-size:14px;color:#9AA8C1">
-<span style="font-family:'Space Grotesk',sans-serif;font-weight:600;color:#EEF2F8">Phantom <span style="color:#E8C46A">Gen 3</span></span>
+<footer style="border-top:1px solid #161F1B">
+<div style="max-width:1180px;margin:0 auto;padding:32px clamp(20px,5vw,48px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;font-size:14px;color:#9BA7A1">
+<span style="font-family:'Space Grotesk',sans-serif;font-weight:600;color:#EEF2F0">Phantom <span style="color:#34D399">Gen 3</span></span>
 <div style="display:flex;flex-wrap:wrap;gap:10px 24px">
-<a href="https://t.me/phantomgen3" style="color:#B6C2D9">Channel Telegram @phantomgen3</a>
+<a href="https://t.me/phantomgen3" style="color:#B3BEB9">Channel Telegram @phantomgen3</a>
 </div>
 <span>© 2026 Phantom Gen 3</span>
 </div>
@@ -173,8 +179,8 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
 (function () {
   "use strict";
   var DATA = null, FILTER = "all", SHOWN = 20, UNIT = "pips";
-  var C = { txt: "#EEF2F8", dim: "#9AA8C1", mute: "#7F8DA8", gold: "#E8C46A", red: "#FF9C92", green: "#6FDCA6",
-            card: "#111B2E", line: "#22314F", deep: "#0B1220" };
+  var C = { txt: "#EEF2F0", dim: "#9BA7A1", mute: "#76827C", gold: "#34D399", red: "#FF9C92", green: "#6FDCA6",
+            card: "#0E1412", line: "#1E2A25", deep: "#060908" };
   var STRAT = {
     ZONE_STRIKE: { name: "Zone Strike", soon: false },
     SWEEP_HUNTER: { name: "Liquidity Raid", soon: true },
@@ -246,10 +252,10 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
   function stratCard(key, s) {
     var meta = STRAT[key] || { name: key, soon: false };
     if (!s) {
-      return h("div", "background:" + C.card + ";border:1px dashed #2F426A;border-radius:14px;padding:16px 18px", [
+      return h("div", "background:" + C.card + ";border:1px dashed #34453D;border-radius:14px;padding:16px 18px", [
         h("div", "display:flex;justify-content:space-between;align-items:center;margin-bottom:10px", [
-          h("span", "font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;color:#C9D3E6", [meta.name]),
-          h("span", "color:#F1DDA4;font-size:12px;font-weight:600", ["SEGERA"])]),
+          h("span", "font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;color:#CAD2CE", [meta.name]),
+          h("span", "color:#D3DBD7;font-size:12px;font-weight:600", ["SEGERA"])]),
         h("div", "font-size:13px;color:" + C.mute, ["Statistik tampil di sini setelah strategi dirilis."])]);
     }
     function cell(label, val, col) {
@@ -285,7 +291,7 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
     setText("curve-since", "· sejak " + fmtDate(d.since));
     var pts = [{ r: 0, pips: 0, t: null }].concat(d.curve || []);
     if (pts.length < 2) {
-      box.appendChild(h("div", "height:100%;border:1px dashed #2F426A;border-radius:12px;display:flex;align-items:center;justify-content:center;color:" + C.mute + ";font-size:14px;text-align:center;padding:16px",
+      box.appendChild(h("div", "height:100%;border:1px dashed #34453D;border-radius:12px;display:flex;align-items:center;justify-content:center;color:" + C.mute + ";font-size:14px;text-align:center;padding:16px",
         ["Kurva tampil setelah trade pertama ditutup."]));
       return;
     }
@@ -306,7 +312,7 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
       var t = el("text", { x: pl - 8, y: y(v) + 4, "text-anchor": "end", fill: C.mute, "font-size": 11, "font-family": "JetBrains Mono, monospace" });
       t.textContent = UNIT === "r" ? num(v, 1) + "R" : num(v, 0);
     });
-    el("line", { x1: pl, x2: W - pr, y1: y(0), y2: y(0), stroke: "#2F426A", "stroke-width": 1, "stroke-dasharray": "4 4" });
+    el("line", { x1: pl, x2: W - pr, y1: y(0), y2: y(0), stroke: "#34453D", "stroke-width": 1, "stroke-dasharray": "4 4" });
     var last = vals[vals.length - 1], col = last >= 0 ? C.green : C.red;
     var dpath = vals.map(function (v, i) { return (i ? "L" : "M") + x(i).toFixed(1) + " " + y(v).toFixed(1); }).join(" ");
     el("path", { d: dpath + " L" + x(vals.length - 1).toFixed(1) + " " + y(0).toFixed(1) + " L" + x(0).toFixed(1) + " " + y(0).toFixed(1) + " Z",
@@ -325,16 +331,16 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
   }
 
   // ----------------------------------------------------------------- trades
-  var KDOT = { entry: C.gold, tp1: C.green, be: "#8FB3FF", win: C.green, loss: C.red, be_close: "#8FB3FF" };
+  var KDOT = { entry: C.gold, tp1: C.green, be: "#C3CCC8", win: C.green, loss: C.red, be_close: "#C3CCC8" };
 
   function tradeRow(t, open) {
     var side = t.side === "BUY";
-    var rCol = t.result === "WIN" ? C.green : t.result === "LOSS" ? C.red : "#8FB3FF";
-    var badge = t.result === "BE" ? h("span", "font-size:11px;color:#8FB3FF;border:1px solid #2F426A;border-radius:999px;padding:2px 8px", ["BE"]) : null;
+    var rCol = t.result === "WIN" ? C.green : t.result === "LOSS" ? C.red : "#C3CCC8";
+    var badge = t.result === "BE" ? h("span", "font-size:11px;color:#C3CCC8;border:1px solid #34453D;border-radius:999px;padding:2px 8px", ["BE"]) : null;
     var sum = h("summary", "display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;padding:14px 18px;min-height:56px", [
-      h("span", "font-family:'JetBrains Mono',monospace;font-size:13px;color:#B6C2D9;min-width:118px", [fmtT(t.entry_time, true)]),
+      h("span", "font-family:'JetBrains Mono',monospace;font-size:13px;color:#B3BEB9;min-width:118px", [fmtT(t.entry_time, true)]),
       h("span", "background:" + (side ? "#16302A" : "#2A1C1F") + ";color:" + (side ? C.green : C.red) + ";font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px", [t.side]),
-      h("span", "font-family:'JetBrains Mono',monospace;font-size:11px;color:" + C.gold + ";border:1px solid #5A4A1A;border-radius:999px;padding:3px 9px", [t.name]),
+      h("span", "font-family:'JetBrains Mono',monospace;font-size:11px;color:" + C.gold + ";border:1px solid #1F5C41;border-radius:999px;padding:3px 9px", [t.name]),
       badge,
       h("span", "font-family:'JetBrains Mono',monospace;font-size:13px;color:" + C.txt + ";flex:1 1 170px", [price(t.entry) + " → " + price(t.exit)]),
       h("span", "font-size:13px;color:" + C.dim + ";min-width:84px", [dur(t.duration_min)]),
@@ -364,7 +370,7 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
       box("Durasi", dur(t.duration_min))]);
     var left = h("div", "flex:1 1 300px;min-width:0", [grid,
       h("div", "font-size:12px;color:" + C.gold + ";font-weight:600;margin-bottom:4px", ["Alasan eksekusi"]),
-      h("p", "margin:0;font-size:14px;line-height:1.65;color:#C9D3E6", [(t.reason ? t.reason + " " : "") + (t.result_text || "")])]);
+      h("p", "margin:0;font-size:14px;line-height:1.65;color:#CAD2CE", [(t.reason ? t.reason + " " : "") + (t.result_text || "")])]);
     if (t.macro && t.macro.length) {
       left.appendChild(h("div", "font-size:12px;color:" + C.gold + ";font-weight:600;margin:12px 0 4px", ["Konteks makro saat entry"]));
       var ul = h("ul", "margin:0;padding-left:18px;font-size:13px;line-height:1.6;color:" + C.dim, []);
@@ -373,7 +379,7 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
     }
     var ol = h("ol", "list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:13px", []);
     (t.timeline || []).forEach(function (e) {
-      var dot = e.k === "be" && t.result === "BE" ? "#8FB3FF" : (KDOT[e.k] || C.mute);
+      var dot = e.k === "be" && t.result === "BE" ? "#C3CCC8" : (KDOT[e.k] || C.mute);
       ol.appendChild(h("li", "display:flex;gap:12px;align-items:flex-start", [
         h("span", "width:9px;height:9px;border-radius:50%;background:" + dot + ";margin-top:7px;flex:none", []),
         h("span", "", [h("span", "font-family:'JetBrains Mono',monospace;color:" + C.txt, [fmtT(e.t, false)]), " ",
@@ -399,7 +405,7 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
     if (!list.length) {
       var msg = (DATA.trades || []).length ? "Belum ada trade untuk filter ini."
         : "Belum ada trade yang ditutup sejak " + fmtDate(DATA.since) + ". Trade pertama tampil otomatis di sini.";
-      box.appendChild(h("div", "border:1px dashed #2F426A;border-radius:14px;padding:16px 18px;color:" + C.mute + ";font-size:14px;text-align:center", [msg]));
+      box.appendChild(h("div", "border:1px dashed #34453D;border-radius:14px;padding:16px 18px;color:" + C.mute + ";font-size:14px;text-align:center", [msg]));
     }
     list.slice(0, SHOWN).forEach(function (t, i) { box.appendChild(tradeRow(t, i === 0 && FILTER === "all")); });
     var more = $("more");
@@ -412,7 +418,7 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
     DATA = d;
     $("au-msg").style.display = "none";
     var gen = new Date(d.generated_at), ageH = (Date.now() - gen.getTime()) / 36e5;
-    $("au-dot").style.background = ageH < 7 ? "#5FD39B" : "#F1DDA4";
+    $("au-dot").style.background = ageH < 7 ? "#5FD39B" : "#D3DBD7";
     setText("au-updated", "Diperbarui otomatis · " + fmtT(d.generated_at, true) + " WIB");
     setText("au-since", fmtDate(d.since));
     setText("au-open", d.open_positions ? d.open_positions + " posisi sedang berjalan · rincian tampil setelah ditutup" : "");

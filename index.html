@@ -5,34 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Phantom Gen 3 — AI Agent emas yang menjelaskan setiap entry</title>
 <meta name="description" content="AI Agent trading emas XAUUSD dengan strategi Zone Strike, analisa makro dan AI Deep Reflection. Semua trade agent tercatat terbuka dengan alasan eksekusinya. Beta gratis 1 bulan, 10 slot.">
-<meta name="theme-color" content="#0B1220">
+<meta name="theme-color" content="#060908">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Phantom Gen 3 — AI Agent emas yang menjelaskan setiap entry">
 <meta property="og:description" content="AI Agent trading emas XAUUSD dengan strategi Zone Strike, analisa makro dan AI Deep Reflection. Semua trade agent tercatat terbuka dengan alasan eksekusinya. Beta gratis 1 bulan, 10 slot.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect x='1' y='1' width='26' height='26' rx='7' fill='%230B1220' stroke='%23E8C46A' stroke-width='1.5'/%3E%3Cpath d='M8 19V9h6.5a3.5 3.5 0 010 7H8' fill='none' stroke='%23E8C46A' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:image" content="https://phantomgen3.com/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#0B1220}
+body{margin:0;background:#060908}
 *{box-sizing:border-box}
-a{color:#E8C46A;text-decoration:none}a:hover{color:#F3D88F}
+a{color:#34D399;text-decoration:none}a:hover{color:#E6ECE9}
 details summary{cursor:pointer;list-style:none}
 details summary::-webkit-details-marker{display:none}
 details[open] .fq-plus{transform:rotate(45deg)}
 details[open] .chev{transform:rotate(180deg)}
 
-.tile{background:#111B2E;border:1px solid #22314F;border-radius:14px;padding:16px 18px}
-.tl{font-size:12px;color:#9AA8C1}.tv{font-family:'JetBrains Mono',monospace;font-size:22px;color:#EEF2F8;margin-top:2px}
-.ts{font-size:12px;color:#7F8DA8;margin-top:2px}
-.chip{background:transparent;color:#B6C2D9;border:1px solid #2F426A;border-radius:999px;padding:8px 14px;font:500 13px Inter,sans-serif;min-height:36px;cursor:pointer}
-.chip.on{background:#E8C46A;color:#241B04;border-color:#E8C46A;font-weight:600}
-.chip:focus-visible,a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #E8C46A;outline-offset:2px}
+.tile{background:#0E1412;border:1px solid #1E2A25;border-radius:14px;padding:16px 18px}
+.tl{font-size:12px;color:#9BA7A1}.tv{font-family:'JetBrains Mono',monospace;font-size:22px;color:#EEF2F0;margin-top:2px}
+.ts{font-size:12px;color:#76827C;margin-top:2px}
+.chip{background:transparent;color:#B3BEB9;border:1px solid #34453D;border-radius:999px;padding:8px 14px;font:500 13px Inter,sans-serif;min-height:36px;cursor:pointer}
+.chip.on{background:#34D399;color:#02140B;border-color:#34D399;font-weight:600}
+.chip:focus-visible,a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #34D399;outline-offset:2px}
 @media (max-width:560px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}.tile{padding:12px 14px}.tv{font-size:19px}}
 html{scroll-behavior:smooth}section[id]{scroll-margin-top:12px}
 
 section > div[style*="padding:clamp(56px,8vw,96px)"]{padding:clamp(40px,6vw,72px) clamp(16px,4vw,40px)!important}
-div[style*="background:#111B2E"]{padding:18px!important}
-div[style*="background:#111B2E"][style*="border-radius:20px"]{border-radius:16px!important}
+div[style*="background:#0E1412"]{padding:18px!important}
+div[style*="background:#0E1412"][style*="border-radius:20px"]{border-radius:16px!important}
 h2[style*="Space Grotesk"]{font-size:clamp(24px,3vw,38px)!important}
 p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
 .g-feat{gap:12px!important}
@@ -46,7 +48,7 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
   h2[style*="Space Grotesk"]{font-size:23px!important;line-height:1.2!important}
   h3[style*="Space Grotesk"]{font-size:19px!important}
   p[style*="font-size:17px"]{font-size:15px!important}
-  div[style*="background:#111B2E"]{padding:14px!important;border-radius:14px!important}
+  div[style*="background:#0E1412"]{padding:14px!important;border-radius:14px!important}
   .g-feat,.g-steps,.g-risk,.g-daftar{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
   .g-feat > div{gap:6px!important}
   .g-feat > div > div:first-child > span:last-child{display:none!important}
@@ -61,237 +63,241 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
   .tv{font-size:16px!important}
   .tl,.ts{font-size:10.5px!important}
   #strat-cards{gap:10px!important}
-  span[style*="font-size:12px;background:#0B1220"]{font-size:11px!important;padding:4px 9px!important}
+  span[style*="font-size:12px;background:#060908"]{font-size:11px!important;padding:4px 9px!important}
 }
+
+h1{background:linear-gradient(180deg,#F5F8F6 0%,#B9C3BF 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+body{background-image:radial-gradient(900px 420px at 15% -80px,rgba(52,211,153,.07),transparent 70%);background-repeat:no-repeat}
+::selection{background:rgba(52,211,153,.3)}
 </style>
 </head>
 <body>
-<noscript><div style="background:#1A1709;color:#F1DDA4;padding:12px 20px;font:14px Inter,sans-serif">Aktifkan JavaScript untuk melihat data audit live.</div></noscript>
-<div style="background:#0B1220;color:#EEF2F8;font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.65;min-height:100%">
+<noscript><div style="background:#0E1412;color:#D3DBD7;padding:12px 20px;font:14px Inter,sans-serif">Aktifkan JavaScript untuk melihat data audit live.</div></noscript>
+<div style="background:#060908;color:#EEF2F0;font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.65;min-height:100%">
 
-<header style="border-bottom:1px solid #1C2A45;background:#0B1220">
+<header style="border-bottom:1px solid #161F1B;background:#060908">
 <div style="max-width:1180px;margin:0 auto;padding:16px clamp(20px,5vw,48px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px">
-<a href="#top" style="display:flex;align-items:center;gap:10px;color:#EEF2F8">
-<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect x="1" y="1" width="26" height="26" rx="7" stroke="#E8C46A" stroke-width="1.5"/><path d="M8 19V9h6.5a3.5 3.5 0 010 7H8" stroke="#E8C46A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-<span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;letter-spacing:.5px">Phantom <span style="color:#E8C46A">Gen 3</span></span>
+<a href="#top" style="display:flex;align-items:center;gap:10px;color:#EEF2F0">
+<img src="/emblem.jpg" width="34" height="34" alt="" style="border-radius:50%;display:block;box-shadow:0 0 0 1px #1E2A25,0 0 14px rgba(52,211,153,.18)">
+<span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;letter-spacing:.5px">Phantom <span style="color:#34D399">Gen 3</span></span>
 </a>
 <nav aria-label="Navigasi utama" style="display:flex;flex-wrap:wrap;gap:6px 22px;font-size:14px">
-<a href="#teknologi" style="color:#B6C2D9">Teknologi</a>
-<a href="#cara-kerja" style="color:#B6C2D9">Cara kerja</a>
-<a href="#risiko" style="color:#B6C2D9">Risiko</a>
-<a href="audit" style="color:#B6C2D9">Hasil live</a>
-<a href="panduan" style="color:#B6C2D9">Panduan</a>
-<a href="#harga" style="color:#B6C2D9">Harga</a>
-<a href="#faq" style="color:#B6C2D9">FAQ</a>
+<a href="#teknologi" style="color:#B3BEB9">Teknologi</a>
+<a href="#cara-kerja" style="color:#B3BEB9">Cara kerja</a>
+<a href="#risiko" style="color:#B3BEB9">Risiko</a>
+<a href="audit" style="color:#B3BEB9">Hasil live</a>
+<a href="panduan" style="color:#B3BEB9">Panduan</a>
+<a href="#harga" style="color:#B3BEB9">Harga</a>
+<a href="#faq" style="color:#B3BEB9">FAQ</a>
 </nav>
-<a href="https://t.me/phantomgen3" style="background:#E8C46A;color:#241B04;font-weight:600;font-size:14px;padding:11px 18px;border-radius:10px;min-height:44px;display:inline-flex;align-items:center">Gabung beta gratis</a>
+<a href="https://t.me/phantomgen3" style="background:#34D399;color:#02140B;font-weight:600;font-size:14px;padding:11px 18px;border-radius:10px;min-height:44px;display:inline-flex;align-items:center">Gabung beta gratis</a>
 </div>
 </header>
 
 <section id="top" style="max-width:1180px;margin:0 auto;padding:clamp(48px,8vw,96px) clamp(20px,5vw,48px) clamp(40px,6vw,72px);display:flex;flex-wrap:wrap;gap:48px;align-items:center">
 <div style="flex:1 1 460px;min-width:0">
-<div style="display:inline-flex;align-items:center;gap:8px;border:1px solid #2A3B5E;border-radius:999px;padding:6px 14px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#B6C2D9;margin-bottom:22px">
+<div style="display:inline-flex;align-items:center;gap:8px;border:1px solid #2A3933;border-radius:999px;padding:6px 14px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#B3BEB9;margin-bottom:22px">
 <span style="width:8px;height:8px;border-radius:50%;background:#5FD39B;display:inline-block"></span>XAUUSD · live di akun real · Zone Strike sejak 26 Nov 2026
 </div>
-<h1 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(36px,5.2vw,62px);line-height:1.08;letter-spacing:-1px;margin:0 0 20px">Mesin trading emas dengan <span style="color:#E8C46A">delapan lapis kecerdasan</span>.</h1>
-<p style="color:#B6C2D9;font-size:clamp(16px,1.5vw,19px);margin:0 0 30px;max-width:580px">Struktur pasar, makro global, kalender berita dan AI Deep Reflection bekerja bersama untuk XAUUSD, 24 jam di VPS kami. Setiap entry datang dengan alasan yang bisa Anda baca, dan setiap loss dibedah oleh AI.</p>
+<h1 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(36px,5.2vw,62px);line-height:1.08;letter-spacing:-1px;margin:0 0 20px">Mesin trading emas dengan <span style="color:#34D399">delapan lapis kecerdasan</span>.</h1>
+<p style="color:#B3BEB9;font-size:clamp(16px,1.5vw,19px);margin:0 0 30px;max-width:580px">Struktur pasar, makro global, kalender berita dan AI Deep Reflection bekerja bersama untuk XAUUSD, 24 jam di VPS kami. Setiap entry datang dengan alasan yang bisa Anda baca, dan setiap loss dibedah oleh AI.</p>
 <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px">
-<a href="https://t.me/phantomgen3" style="background:#E8C46A;color:#241B04;font-weight:600;padding:14px 22px;border-radius:12px;min-height:48px;display:inline-flex;align-items:center;gap:8px">Gabung beta gratis 1 bulan
-<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="#241B04" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-<a href="audit" style="border:1px solid #2F426A;color:#EEF2F8;font-weight:500;padding:14px 22px;border-radius:12px;min-height:48px;display:inline-flex;align-items:center">Lihat hasil live</a>
+<a href="https://t.me/phantomgen3" style="background:#34D399;color:#02140B;font-weight:600;padding:14px 22px;border-radius:12px;min-height:48px;display:inline-flex;align-items:center;gap:8px">Gabung beta gratis 1 bulan
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="#02140B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<a href="audit" style="border:1px solid #34453D;color:#EEF2F0;font-weight:500;padding:14px 22px;border-radius:12px;min-height:48px;display:inline-flex;align-items:center">Lihat hasil live</a>
 </div>
-<div style="display:flex;flex-wrap:wrap;gap:10px 28px;font-size:14px;color:#9AA8C1">
-<span style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8C46A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>VPS dari kami</span>
-<span style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8C46A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/></svg>Kontrol via Telegram</span>
-<span style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8C46A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/></svg>Lock loss harian</span>
+<div style="display:flex;flex-wrap:wrap;gap:10px 28px;font-size:14px;color:#9BA7A1">
+<span style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>VPS dari kami</span>
+<span style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/></svg>Kontrol via Telegram</span>
+<span style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/></svg>Lock loss harian</span>
 </div>
 </div>
 
 <div style="flex:1 1 380px;min-width:0;max-width:520px">
-<div style="background:#111B2E;border:1px solid #22314F;border-radius:18px;padding:22px;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.75;color:#C9D3E6">
+<div style="background:#0E1412;border:1px solid #1E2A25;border-radius:18px;padding:22px;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.75;color:#CAD2CE">
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;font-family:Inter,sans-serif">
-<span style="font-size:12px;color:#9AA8C1">Contoh kartu entry di Telegram</span>
+<span style="font-size:12px;color:#9BA7A1">Contoh kartu entry di Telegram</span>
 <span style="font-size:12px;background:#2A1C1F;color:#FF9C92;padding:3px 10px;border-radius:999px">SELL</span>
 </div>
-<div style="color:#EEF2F8;font-weight:500">PHANTOM · SELL · XAUUSD</div>
-<div style="color:#9AA8C1;margin-bottom:10px">26 Nov 2026 · 18:25 WIB</div>
+<div style="color:#EEF2F0;font-weight:500">PHANTOM · SELL · XAUUSD</div>
+<div style="color:#9BA7A1;margin-bottom:10px">26 Nov 2026 · 18:25 WIB</div>
 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:12px">
-<div style="background:#0B1220;border-radius:10px;padding:10px 12px"><div style="font-size:11px;color:#9AA8C1">Entry</div><div style="color:#EEF2F8">3564.49</div></div>
-<div style="background:#0B1220;border-radius:10px;padding:10px 12px"><div style="font-size:11px;color:#9AA8C1">Stop loss</div><div style="color:#FF9C92">3573.37</div></div>
-<div style="background:#0B1220;border-radius:10px;padding:10px 12px"><div style="font-size:11px;color:#9AA8C1">TP1 · 1R</div><div style="color:#6FDCA6">3555.65</div></div>
-<div style="background:#0B1220;border-radius:10px;padding:10px 12px"><div style="font-size:11px;color:#9AA8C1">TP2 · likuiditas</div><div style="color:#6FDCA6">3551.28</div></div>
+<div style="background:#060908;border-radius:10px;padding:10px 12px"><div style="font-size:11px;color:#9BA7A1">Entry</div><div style="color:#EEF2F0">3564.49</div></div>
+<div style="background:#060908;border-radius:10px;padding:10px 12px"><div style="font-size:11px;color:#9BA7A1">Stop loss</div><div style="color:#FF9C92">3573.37</div></div>
+<div style="background:#060908;border-radius:10px;padding:10px 12px"><div style="font-size:11px;color:#9BA7A1">TP1 · 1R</div><div style="color:#6FDCA6">3555.65</div></div>
+<div style="background:#060908;border-radius:10px;padding:10px 12px"><div style="font-size:11px;color:#9BA7A1">TP2 · likuiditas</div><div style="color:#6FDCA6">3551.28</div></div>
 </div>
-<div style="font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#B6C2D9;border-top:1px solid #22314F;padding-top:12px"><span style="color:#E8C46A;font-weight:500">Alasan eksekusi: </span>harga kembali ke FVG M15 3566.55–3573.07, menyapu high mikro di 3569.69, lalu M1 membentuk MSS turun. SL di atas zona. Separuh posisi ditutup di 1R lalu SL ke BE, sisanya menuju likuiditas.</div>
+<div style="font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#B3BEB9;border-top:1px solid #1E2A25;padding-top:12px"><span style="color:#34D399;font-weight:500">Alasan eksekusi: </span>harga kembali ke FVG M15 3566.55–3573.07, menyapu high mikro di 3569.69, lalu M1 membentuk MSS turun. SL di atas zona. Separuh posisi ditutup di 1R lalu SL ke BE, sisanya menuju likuiditas.</div>
 </div>
-<p style="font-size:12px;color:#7F8DA8;margin:10px 4px 0">Kartu asli dari trade live. Trade ini berakhir loss −0,96R; semua hasil, menang atau kalah, tercatat.</p>
+<p style="font-size:12px;color:#76827C;margin:10px 4px 0">Kartu asli dari trade live. Trade ini berakhir loss −0,96R; semua hasil, menang atau kalah, tercatat.</p>
 </div>
 </section>
 
-<section id="teknologi" style="border-top:1px solid #1C2A45">
+<section id="teknologi" style="border-top:1px solid #161F1B">
 <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,96px) clamp(20px,5vw,48px)">
-<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#E8C46A;letter-spacing:1.5px;margin-bottom:10px">TEKNOLOGI · DELAPAN LAPIS KECERDASAN</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#34D399;letter-spacing:1.5px;margin-bottom:10px">TEKNOLOGI · DELAPAN LAPIS KECERDASAN</div>
 <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,46px);line-height:1.12;margin:0 0 14px;max-width:820px">Bukan EA indikator biasa. Phantom membaca pasar seperti satu tim analis yang bekerja 24 jam.</h2>
-<p style="color:#B6C2D9;max-width:720px;margin:0 0 40px;font-size:17px">Struktur harga, fundamental makro, kalender berita dan AI bekerja dalam satu sistem. Setiap lapis punya satu tugas, dan sebuah order baru dikirim setelah semuanya sepakat.</p>
-<div class="g-feat" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px"><div style="background:#111B2E;border:1px solid #22314F;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px">
-<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="width:42px;height:42px;border-radius:12px;background:#1A2540;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8C46A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9AA8C1;border:1px solid #2A3B5E;border-radius:999px;padding:3px 9px">TEKNIKAL</span></div>
+<p style="color:#B3BEB9;max-width:720px;margin:0 0 40px;font-size:17px">Struktur harga, fundamental makro, kalender berita dan AI bekerja dalam satu sistem. Setiap lapis punya satu tugas, dan sebuah order baru dikirim setelah semuanya sepakat.</p>
+<div class="g-feat" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px"><div style="background:#0E1412;border:1px solid #1E2A25;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="width:42px;height:42px;border-radius:12px;background:#15201B;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9BA7A1;border:1px solid #2A3933;border-radius:999px;padding:3px 9px">TEKNIKAL</span></div>
 <h3 style="font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;margin:4px 0 0">Mesin struktur pasar</h3>
-<p style="color:#9AA8C1;font-size:15px;margin:0">Membaca bias H1, zona FVG dan order block M15, sapuan likuiditas, dan pergeseran struktur M1 setiap menit, tanpa lelah dan tanpa emosi.</p></div><div style="background:#111B2E;border:1px solid #22314F;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px">
-<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="width:42px;height:42px;border-radius:12px;background:#1A2540;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8C46A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg></span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9AA8C1;border:1px solid #2A3B5E;border-radius:999px;padding:3px 9px">MAKRO</span></div>
+<p style="color:#9BA7A1;font-size:15px;margin:0">Membaca bias H1, zona FVG dan order block M15, sapuan likuiditas, dan pergeseran struktur M1 setiap menit, tanpa lelah dan tanpa emosi.</p></div><div style="background:#0E1412;border:1px solid #1E2A25;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="width:42px;height:42px;border-radius:12px;background:#15201B;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg></span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9BA7A1;border:1px solid #2A3933;border-radius:999px;padding:3px 9px">MAKRO</span></div>
 <h3 style="font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;margin:4px 0 0">Macro intelligence</h3>
-<p style="color:#9AA8C1;font-size:15px;margin:0">Memantau dolar (DXY), yield obligasi AS 2 dan 10 tahun, real yield, dan VIX. Setiap sinyal dinilai searah atau melawan arus fundamental emas.</p></div><div style="background:#111B2E;border:1px solid #22314F;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px">
-<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="width:42px;height:42px;border-radius:12px;background:#1A2540;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8C46A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 016 6c0 2.5-1.4 3.8-2.5 5-.8.8-1.5 1.7-1.5 3h-4c0-1.3-.7-2.2-1.5-3C7.4 12.8 6 11.5 6 9a6 6 0 016-6z"/><path d="M10 21h4"/></svg></span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9AA8C1;border:1px solid #2A3B5E;border-radius:999px;padding:3px 9px">AI</span></div>
+<p style="color:#9BA7A1;font-size:15px;margin:0">Memantau dolar (DXY), yield obligasi AS 2 dan 10 tahun, real yield, dan VIX. Setiap sinyal dinilai searah atau melawan arus fundamental emas.</p></div><div style="background:#0E1412;border:1px solid #1E2A25;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="width:42px;height:42px;border-radius:12px;background:#15201B;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 016 6c0 2.5-1.4 3.8-2.5 5-.8.8-1.5 1.7-1.5 3h-4c0-1.3-.7-2.2-1.5-3C7.4 12.8 6 11.5 6 9a6 6 0 016-6z"/><path d="M10 21h4"/></svg></span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9BA7A1;border:1px solid #2A3933;border-radius:999px;padding:3px 9px">AI</span></div>
 <h3 style="font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;margin:4px 0 0">AI Deep Reflection</h3>
-<p style="color:#9AA8C1;font-size:15px;margin:0">Setelah rangkaian loss, AI membedah setiap trade: apa yang berbeda dari trade menang, seberapa yakin, dan uji apa yang perlu dijalankan berikutnya.</p></div><div style="background:#111B2E;border:1px solid #22314F;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px">
-<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="width:42px;height:42px;border-radius:12px;background:#1A2540;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8C46A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h5"/></svg></span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9AA8C1;border:1px solid #2A3B5E;border-radius:999px;padding:3px 9px">RANKING</span></div>
+<p style="color:#9BA7A1;font-size:15px;margin:0">Setelah rangkaian loss, AI membedah setiap trade: apa yang berbeda dari trade menang, seberapa yakin, dan uji apa yang perlu dijalankan berikutnya.</p></div><div style="background:#0E1412;border:1px solid #1E2A25;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="width:42px;height:42px;border-radius:12px;background:#15201B;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h5"/></svg></span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9BA7A1;border:1px solid #2A3933;border-radius:999px;padding:3px 9px">RANKING</span></div>
 <h3 style="font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;margin:4px 0 0">Skor kandidat 0–100</h3>
-<p style="color:#9AA8C1;font-size:15px;margin:0">Setiap setup diberi skor teknikal dan makro. Saat beberapa sinyal muncul bersamaan, hanya yang terbaik yang dieksekusi.</p></div><div style="background:#111B2E;border:1px solid #22314F;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px">
-<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="width:42px;height:42px;border-radius:12px;background:#1A2540;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8C46A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9AA8C1;border:1px solid #2A3B5E;border-radius:999px;padding:3px 9px">BERITA</span></div>
+<p style="color:#9BA7A1;font-size:15px;margin:0">Setiap setup diberi skor teknikal dan makro. Saat beberapa sinyal muncul bersamaan, hanya yang terbaik yang dieksekusi.</p></div><div style="background:#0E1412;border:1px solid #1E2A25;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="width:42px;height:42px;border-radius:12px;background:#15201B;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9BA7A1;border:1px solid #2A3933;border-radius:999px;padding:3px 9px">BERITA</span></div>
 <h3 style="font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;margin:4px 0 0">News guard</h3>
-<p style="color:#9AA8C1;font-size:15px;margin:0">Kalender ekonomi dipantau terus. Entry ditahan di sekitar rilis berita besar, saat spread melebar dan harga liar.</p></div><div style="background:#111B2E;border:1px solid #22314F;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px">
-<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="width:42px;height:42px;border-radius:12px;background:#1A2540;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8C46A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9AA8C1;border:1px solid #2A3B5E;border-radius:999px;padding:3px 9px">RISIKO</span></div>
+<p style="color:#9BA7A1;font-size:15px;margin:0">Kalender ekonomi dipantau terus. Entry ditahan di sekitar rilis berita besar, saat spread melebar dan harga liar.</p></div><div style="background:#0E1412;border:1px solid #1E2A25;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="width:42px;height:42px;border-radius:12px;background:#15201B;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9BA7A1;border:1px solid #2A3933;border-radius:999px;padding:3px 9px">RISIKO</span></div>
 <h3 style="font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;margin:4px 0 0">Risk engine berlapis</h3>
-<p style="color:#9AA8C1;font-size:15px;margin:0">Lot dihitung dari equity, SL dipasang di broker sejak awal, BE otomatis di 1R, dan entry terkunci saat batas loss harian tercapai.</p></div><div style="background:#111B2E;border:1px solid #22314F;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px">
-<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="width:42px;height:42px;border-radius:12px;background:#1A2540;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8C46A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9AA8C1;border:1px solid #2A3B5E;border-radius:999px;padding:3px 9px">UJI</span></div>
+<p style="color:#9BA7A1;font-size:15px;margin:0">Lot dihitung dari equity, SL dipasang di broker sejak awal, BE otomatis di 1R, dan entry terkunci saat batas loss harian tercapai.</p></div><div style="background:#0E1412;border:1px solid #1E2A25;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="width:42px;height:42px;border-radius:12px;background:#15201B;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9BA7A1;border:1px solid #2A3933;border-radius:999px;padding:3px 9px">UJI</span></div>
 <h3 style="font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;margin:4px 0 0">Shadow lab</h3>
-<p style="color:#9AA8C1;font-size:15px;margin:0">Strategi baru berjalan berdampingan di pasar live tanpa order. Hanya yang terbukti lebih baik yang naik ke akun Anda.</p></div><div style="background:#111B2E;border:1px solid #22314F;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px">
-<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="width:42px;height:42px;border-radius:12px;background:#1A2540;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8C46A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/></svg></span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9AA8C1;border:1px solid #2A3B5E;border-radius:999px;padding:3px 9px">TELEGRAM</span></div>
+<p style="color:#9BA7A1;font-size:15px;margin:0">Strategi baru berjalan berdampingan di pasar live tanpa order. Hanya yang terbukti lebih baik yang naik ke akun Anda.</p></div><div style="background:#0E1412;border:1px solid #1E2A25;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="width:42px;height:42px;border-radius:12px;background:#15201B;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/></svg></span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9BA7A1;border:1px solid #2A3933;border-radius:999px;padding:3px 9px">TELEGRAM</span></div>
 <h3 style="font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;margin:4px 0 0">Laporan Telegram real time</h3>
-<p style="color:#9AA8C1;font-size:15px;margin:0">Kartu entry dengan grafik, alasan eksekusi, SL dan TP, kartu close dengan hasil, ringkasan status, dan hasil analisa AI.</p></div></div>
+<p style="color:#9BA7A1;font-size:15px;margin:0">Kartu entry dengan grafik, alasan eksekusi, SL dan TP, kartu close dengan hasil, ringkasan status, dan hasil analisa AI.</p></div></div>
 </div>
 </section>
 
-<section id="makro-ai" style="border-top:1px solid #1C2A45;background:#0E1729">
+<section id="makro-ai" style="border-top:1px solid #161F1B;background:#0A0F0D">
 <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,96px) clamp(20px,5vw,48px);display:flex;flex-wrap:wrap;gap:24px">
 
-<div style="flex:1 1 440px;min-width:0;background:#111B2E;border:1px solid #22314F;border-radius:20px;padding:clamp(22px,3vw,32px)">
-<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#E8C46A;letter-spacing:1.5px;margin-bottom:10px">MACRO INTELLIGENCE</div>
+<div style="flex:1 1 440px;min-width:0;background:#0E1412;border:1px solid #1E2A25;border-radius:20px;padding:clamp(22px,3vw,32px)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#34D399;letter-spacing:1.5px;margin-bottom:10px">MACRO INTELLIGENCE</div>
 <h3 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,2.4vw,30px);font-weight:600;line-height:1.2;margin:0 0 10px">Emas bergerak karena dolar dan suku bunga. Phantom memantau keduanya.</h3>
-<p style="color:#9AA8C1;font-size:15px;margin:0 0 18px">Data resmi bank sentral AS (FRED) dan harga pasar dibaca setiap hari. Tren 20 hari menentukan apakah fundamental sedang menekan atau mendukung emas, lalu setiap sinyal diberi nilai searah atau melawan arus.</p>
+<p style="color:#9BA7A1;font-size:15px;margin:0 0 18px">Data resmi bank sentral AS (FRED) dan harga pasar dibaca setiap hari. Tren 20 hari menentukan apakah fundamental sedang menekan atau mendukung emas, lalu setiap sinyal diberi nilai searah atau melawan arus.</p>
 <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px">
-<span style="font-family:'JetBrains Mono',monospace;font-size:12px;background:#0B1220;border:1px solid #2A3B5E;border-radius:999px;padding:6px 12px;color:#C9D3E6">DXY · dolar AS</span>
-<span style="font-family:'JetBrains Mono',monospace;font-size:12px;background:#0B1220;border:1px solid #2A3B5E;border-radius:999px;padding:6px 12px;color:#C9D3E6">US10Y · yield 10 tahun</span>
-<span style="font-family:'JetBrains Mono',monospace;font-size:12px;background:#0B1220;border:1px solid #2A3B5E;border-radius:999px;padding:6px 12px;color:#C9D3E6">US2Y · yield 2 tahun</span>
-<span style="font-family:'JetBrains Mono',monospace;font-size:12px;background:#0B1220;border:1px solid #2A3B5E;border-radius:999px;padding:6px 12px;color:#C9D3E6">Real yield 10Y</span>
-<span style="font-family:'JetBrains Mono',monospace;font-size:12px;background:#0B1220;border:1px solid #2A3B5E;border-radius:999px;padding:6px 12px;color:#C9D3E6">VIX · sentimen risiko</span>
+<span style="font-family:'JetBrains Mono',monospace;font-size:12px;background:#060908;border:1px solid #2A3933;border-radius:999px;padding:6px 12px;color:#CAD2CE">DXY · dolar AS</span>
+<span style="font-family:'JetBrains Mono',monospace;font-size:12px;background:#060908;border:1px solid #2A3933;border-radius:999px;padding:6px 12px;color:#CAD2CE">US10Y · yield 10 tahun</span>
+<span style="font-family:'JetBrains Mono',monospace;font-size:12px;background:#060908;border:1px solid #2A3933;border-radius:999px;padding:6px 12px;color:#CAD2CE">US2Y · yield 2 tahun</span>
+<span style="font-family:'JetBrains Mono',monospace;font-size:12px;background:#060908;border:1px solid #2A3933;border-radius:999px;padding:6px 12px;color:#CAD2CE">Real yield 10Y</span>
+<span style="font-family:'JetBrains Mono',monospace;font-size:12px;background:#060908;border:1px solid #2A3933;border-radius:999px;padding:6px 12px;color:#CAD2CE">VIX · sentimen risiko</span>
 </div>
-<div style="background:#0B1220;border-radius:14px;padding:16px;font-size:14px;color:#C9D3E6;line-height:1.65"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#E8C46A">Contoh di kartu entry</span><br>Kondisi fundamental 20 hari cenderung menekan emas. Arah SELL searah dengan kesimpulan makro, sehingga skor makro ditambahkan ke skor teknikal.</div>
+<div style="background:#060908;border-radius:14px;padding:16px;font-size:14px;color:#CAD2CE;line-height:1.65"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#34D399">Contoh di kartu entry</span><br>Kondisi fundamental 20 hari cenderung menekan emas. Arah SELL searah dengan kesimpulan makro, sehingga skor makro ditambahkan ke skor teknikal.</div>
 </div>
 
-<div style="flex:1 1 440px;min-width:0;background:#111B2E;border:1px solid #22314F;border-radius:20px;padding:clamp(22px,3vw,32px)">
-<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#E8C46A;letter-spacing:1.5px;margin-bottom:10px">AI DEEP REFLECTION</div>
+<div style="flex:1 1 440px;min-width:0;background:#0E1412;border:1px solid #1E2A25;border-radius:20px;padding:clamp(22px,3vw,32px)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#34D399;letter-spacing:1.5px;margin-bottom:10px">AI DEEP REFLECTION</div>
 <h3 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,2.4vw,30px);font-weight:600;line-height:1.2;margin:0 0 10px">Setiap loss dibedah oleh AI. Pelajarannya diuji, bukan ditebak.</h3>
-<p style="color:#9AA8C1;font-size:15px;margin:0 0 18px">Saat batas loss tercapai, AI menerima seluruh data trade hari itu dan menulis laporan: bukti, tingkat keyakinan, dan uji yang perlu dijalankan. Perbaikan baru dipakai setelah lolos uji di shadow lab, jadi AI tidak pernah berjudi dengan uang Anda.</p>
-<div style="background:#0B1220;border-radius:14px;padding:16px;font-size:14px;line-height:1.65;color:#C9D3E6;display:grid;gap:8px">
-<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#E8C46A">Kutipan laporan AI, 26 Nov 2026</div>
-<div><span style="color:#9AA8C1">Temuan · </span>skor total tidak memisahkan trade menang dan kalah; filter skor saja tidak akan memperbaiki hasil.</div>
-<div><span style="color:#9AA8C1">Ketidakpastian · </span>sampel 14 trade terlalu kecil untuk memisahkan setup lemah dari variasi normal.</div>
-<div><span style="color:#9AA8C1">Uji berikutnya · </span>bandingkan pemilihan target berbasis R di shadow, tanpa mengubah entry live.</div>
+<p style="color:#9BA7A1;font-size:15px;margin:0 0 18px">Saat batas loss tercapai, AI menerima seluruh data trade hari itu dan menulis laporan: bukti, tingkat keyakinan, dan uji yang perlu dijalankan. Perbaikan baru dipakai setelah lolos uji di shadow lab, jadi AI tidak pernah berjudi dengan uang Anda.</p>
+<div style="background:#060908;border-radius:14px;padding:16px;font-size:14px;line-height:1.65;color:#CAD2CE;display:grid;gap:8px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#34D399">Kutipan laporan AI, 26 Nov 2026</div>
+<div><span style="color:#9BA7A1">Temuan · </span>skor total tidak memisahkan trade menang dan kalah; filter skor saja tidak akan memperbaiki hasil.</div>
+<div><span style="color:#9BA7A1">Ketidakpastian · </span>sampel 14 trade terlalu kecil untuk memisahkan setup lemah dari variasi normal.</div>
+<div><span style="color:#9BA7A1">Uji berikutnya · </span>bandingkan pemilihan target berbasis R di shadow, tanpa mengubah entry live.</div>
 </div>
 </div>
 
-<div style="flex:1 1 100%;background:#111B2E;border:1px solid #22314F;border-radius:20px;padding:clamp(22px,3vw,32px);display:flex;flex-wrap:wrap;gap:24px;align-items:center">
+<div style="flex:1 1 100%;background:#0E1412;border:1px solid #1E2A25;border-radius:20px;padding:clamp(22px,3vw,32px);display:flex;flex-wrap:wrap;gap:24px;align-items:center">
 <div style="flex:1 1 380px;min-width:0">
-<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#E8C46A;letter-spacing:1.5px;margin-bottom:10px">SHADOW LAB · UJI 60 HARI</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#34D399;letter-spacing:1.5px;margin-bottom:10px">SHADOW LAB · UJI 60 HARI</div>
 <h3 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,2.4vw,30px);font-weight:600;line-height:1.2;margin:0 0 10px">Zone Strike naik ke live setelah mengalahkan semua pesaingnya.</h3>
-<p style="color:#9AA8C1;font-size:15px;margin:0">Empat strategi diputar ulang menit demi menit pada 60 hari data emas, dengan aturan yang sama persis dengan agent live. Hanya Zone Strike yang positif di kedua paruh periode.</p>
+<p style="color:#9BA7A1;font-size:15px;margin:0">Empat strategi diputar ulang menit demi menit pada 60 hari data emas, dengan aturan yang sama persis dengan agent live. Hanya Zone Strike yang positif di kedua paruh periode.</p>
 </div>
 <div style="flex:1 1 380px;min-width:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px">
-<div style="background:#0B1220;border-radius:12px;padding:14px"><div style="font-size:12px;color:#9AA8C1">Trade diuji</div><div style="font-family:'JetBrains Mono',monospace;font-size:22px">206</div></div>
-<div style="background:#0B1220;border-radius:12px;padding:14px"><div style="font-size:12px;color:#9AA8C1">Win rate</div><div style="font-family:'JetBrains Mono',monospace;font-size:22px">56%</div></div>
-<div style="background:#0B1220;border-radius:12px;padding:14px"><div style="font-size:12px;color:#9AA8C1">Hasil total</div><div style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#6FDCA6">+37,6R</div></div>
-<div style="background:#0B1220;border-radius:12px;padding:14px"><div style="font-size:12px;color:#9AA8C1">Paruh 1 / paruh 2</div><div style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#6FDCA6">+15,9 / +21,7</div></div>
-<div style="grid-column:1 / -1;font-size:12px;color:#7F8DA8">Hasil simulasi 27 Sep–26 Nov 2026 pada data M1 XAUUSD, tanpa slippage. Simulasi bukan hasil live dan tidak menjamin hasil ke depan.</div>
+<div style="background:#060908;border-radius:12px;padding:14px"><div style="font-size:12px;color:#9BA7A1">Trade diuji</div><div style="font-family:'JetBrains Mono',monospace;font-size:22px">206</div></div>
+<div style="background:#060908;border-radius:12px;padding:14px"><div style="font-size:12px;color:#9BA7A1">Win rate</div><div style="font-family:'JetBrains Mono',monospace;font-size:22px">56%</div></div>
+<div style="background:#060908;border-radius:12px;padding:14px"><div style="font-size:12px;color:#9BA7A1">Hasil total</div><div style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#6FDCA6">+37,6R</div></div>
+<div style="background:#060908;border-radius:12px;padding:14px"><div style="font-size:12px;color:#9BA7A1">Paruh 1 / paruh 2</div><div style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#6FDCA6">+15,9 / +21,7</div></div>
+<div style="grid-column:1 / -1;font-size:12px;color:#76827C">Hasil simulasi 27 Sep–26 Nov 2026 pada data M1 XAUUSD, tanpa slippage. Simulasi bukan hasil live dan tidak menjamin hasil ke depan.</div>
 </div>
 </div>
 </div>
 </section>
 
-<section id="cara-kerja" style="border-top:1px solid #1C2A45;background:#0E1729">
+<section id="cara-kerja" style="border-top:1px solid #161F1B;background:#0A0F0D">
 <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,96px) clamp(20px,5vw,48px)">
-<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#E8C46A;letter-spacing:1.5px;margin-bottom:10px">CARA KERJA · ZONE STRIKE</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#34D399;letter-spacing:1.5px;margin-bottom:10px">CARA KERJA · ZONE STRIKE</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:0 0 48px">
-<div style="background:#111B2E;border:2px solid #E8C46A;border-radius:18px;padding:24px">
+<div style="background:#0E1412;border:2px solid #34D399;border-radius:18px;padding:24px">
 <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px"><span style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600">Zone Strike</span><span style="display:inline-flex;align-items:center;gap:6px;background:#13291F;color:#6FDCA6;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px"><span style="width:7px;height:7px;border-radius:50%;background:#5FD39B;display:inline-block"></span>AKTIF</span></div>
-<p style="color:#B6C2D9;font-size:15px;margin:0 0 14px">Menunggu harga kembali ke zona FVG atau order block M15, membiarkan likuiditas tersapu, lalu menyerang saat struktur M1 berbalik.</p>
-<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#9AA8C1">M15 → M1 · 3–4 entry/hari · TP1 1R + target likuiditas</div>
+<p style="color:#B3BEB9;font-size:15px;margin:0 0 14px">Menunggu harga kembali ke zona FVG atau order block M15, membiarkan likuiditas tersapu, lalu menyerang saat struktur M1 berbalik.</p>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#9BA7A1">M15 → M1 · 3–4 entry/hari · TP1 1R + target likuiditas</div>
 </div>
-<div style="background:#111B2E;border:1px dashed #2F426A;border-radius:18px;padding:24px">
-<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px"><span style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:#C9D3E6">Liquidity Raid</span><span style="background:#2A2410;color:#F1DDA4;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px">SEGERA</span></div>
-<p style="color:#9AA8C1;font-size:15px;margin:0 0 14px">Strategi kedua yang memburu sapuan likuiditas di level penting sesi Asia, London dan New York. Sedang disempurnakan di shadow lab sebelum dirilis.</p>
-<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7F8DA8">M5/M1 · rilis setelah lolos uji 60 hari</div>
+<div style="background:#0E1412;border:1px dashed #34453D;border-radius:18px;padding:24px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px"><span style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:#CAD2CE">Liquidity Raid</span><span style="background:#141B18;color:#D3DBD7;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px">SEGERA</span></div>
+<p style="color:#9BA7A1;font-size:15px;margin:0 0 14px">Strategi kedua yang memburu sapuan likuiditas di level penting sesi Asia, London dan New York. Sedang disempurnakan di shadow lab sebelum dirilis.</p>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#76827C">M5/M1 · rilis setelah lolos uji 60 hari</div>
 </div>
 </div>
 <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.4vw,42px);line-height:1.15;margin:0 0 14px;max-width:720px">Empat syarat harus terpenuhi sebelum satu order dikirim.</h2>
-<p style="color:#B6C2D9;max-width:680px;margin:0 0 40px">AI Agent menunggu harga kembali ke zona penting, membersihkan likuiditas, lalu berbalik dengan konfirmasi. Hasilnya sekitar 3–4 entry per hari, bukan puluhan.</p>
+<p style="color:#B3BEB9;max-width:680px;margin:0 0 40px">AI Agent menunggu harga kembali ke zona penting, membersihkan likuiditas, lalu berbalik dengan konfirmasi. Hasilnya sekitar 3–4 entry per hari, bukan puluhan.</p>
 <div class="g-steps" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px">
-<div style="background:#111B2E;border:1px solid #22314F;border-radius:16px;padding:22px">
-<div style="font-family:'JetBrains Mono',monospace;color:#E8C46A;font-size:13px;margin-bottom:14px">01</div>
+<div style="background:#0E1412;border:1px solid #1E2A25;border-radius:16px;padding:22px">
+<div style="font-family:'JetBrains Mono',monospace;color:#34D399;font-size:13px;margin-bottom:14px">01</div>
 <h3 style="font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;margin:0 0 8px">Zona POI M15</h3>
-<p style="color:#9AA8C1;font-size:15px;margin:0">FVG atau order block di M15, searah bias H1. Zona yang sudah lewat tidak dipakai lagi.</p>
+<p style="color:#9BA7A1;font-size:15px;margin:0">FVG atau order block di M15, searah bias H1. Zona yang sudah lewat tidak dipakai lagi.</p>
 </div>
-<div style="background:#111B2E;border:1px solid #22314F;border-radius:16px;padding:22px">
-<div style="font-family:'JetBrains Mono',monospace;color:#E8C46A;font-size:13px;margin-bottom:14px">02</div>
+<div style="background:#0E1412;border:1px solid #1E2A25;border-radius:16px;padding:22px">
+<div style="font-family:'JetBrains Mono',monospace;color:#34D399;font-size:13px;margin-bottom:14px">02</div>
 <h3 style="font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;margin:0 0 8px">Sapuan likuiditas</h3>
-<p style="color:#9AA8C1;font-size:15px;margin:0">Harga harus menyapu high atau low mikro di sekitar zona, tempat stop trader lain menumpuk.</p>
+<p style="color:#9BA7A1;font-size:15px;margin:0">Harga harus menyapu high atau low mikro di sekitar zona, tempat stop trader lain menumpuk.</p>
 </div>
-<div style="background:#111B2E;border:1px solid #22314F;border-radius:16px;padding:22px">
-<div style="font-family:'JetBrains Mono',monospace;color:#E8C46A;font-size:13px;margin-bottom:14px">03</div>
+<div style="background:#0E1412;border:1px solid #1E2A25;border-radius:16px;padding:22px">
+<div style="font-family:'JetBrains Mono',monospace;color:#34D399;font-size:13px;margin-bottom:14px">03</div>
 <h3 style="font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;margin:0 0 8px">Konfirmasi MSS M1</h3>
-<p style="color:#9AA8C1;font-size:15px;margin:0">Candle M1 close menembus pivot terakhir. Tanpa konfirmasi ini, tidak ada entry.</p>
+<p style="color:#9BA7A1;font-size:15px;margin:0">Candle M1 close menembus pivot terakhir. Tanpa konfirmasi ini, tidak ada entry.</p>
 </div>
-<div style="background:#111B2E;border:1px solid #22314F;border-radius:16px;padding:22px">
-<div style="font-family:'JetBrains Mono',monospace;color:#E8C46A;font-size:13px;margin-bottom:14px">04</div>
+<div style="background:#0E1412;border:1px solid #1E2A25;border-radius:16px;padding:22px">
+<div style="font-family:'JetBrains Mono',monospace;color:#34D399;font-size:13px;margin-bottom:14px">04</div>
 <h3 style="font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;margin:0 0 8px">Eksekusi dan kelola</h3>
-<p style="color:#9AA8C1;font-size:15px;margin:0">SL di luar zona. Di 1R SL pindah ke BE, partial 50% bisa Anda pilih, sisanya ke target likuiditas.</p>
+<p style="color:#9BA7A1;font-size:15px;margin:0">SL di luar zona. Di 1R SL pindah ke BE, partial 50% bisa Anda pilih, sisanya ke target likuiditas.</p>
 </div>
 </div>
-<div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;background:#0B1220;border:1px solid #22314F;border-radius:14px;padding:16px 20px;font-size:14px;color:#B6C2D9">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8C46A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/></svg>
+<div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;background:#060908;border:1px solid #1E2A25;border-radius:14px;padding:16px 20px;font-size:14px;color:#B3BEB9">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/></svg>
 <span style="flex:1 1 300px">Keputusan live dijalankan oleh aturan tetap di kode, bukan oleh AI chat. Aturan yang sama dipakai untuk simulasi, jadi hasil live bisa dibandingkan apa adanya.</span>
 </div>
 </div>
 </section>
 
-<section id="risiko" style="border-top:1px solid #1C2A45">
+<section id="risiko" style="border-top:1px solid #161F1B">
 <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,96px) clamp(20px,5vw,48px);display:flex;flex-wrap:wrap;gap:48px">
 <div style="flex:1 1 340px;min-width:0">
-<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#E8C46A;letter-spacing:1.5px;margin-bottom:10px">MANAJEMEN RISIKO</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#34D399;letter-spacing:1.5px;margin-bottom:10px">MANAJEMEN RISIKO</div>
 <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.4vw,42px);line-height:1.15;margin:0 0 14px">Anda yang menentukan seberapa besar risikonya.</h2>
-<p style="color:#B6C2D9;margin:0 0 20px">Semua pengaturan bisa diubah kapan saja lewat Telegram. Kami tidak membatasi pilihan Anda, tapi agent selalu menampilkan apa artinya sebelum pengaturan berlaku.</p>
-<div style="background:#2A2410;border:1px solid #5A4A1A;border-radius:14px;padding:16px 18px;font-size:14px;color:#F1DDA4">Contoh: risiko 10% per trade berarti 6 loss beruntun bisa menghabiskan sekitar setengah modal. Risiko yang lebih besar mempercepat untung maupun rugi.</div>
+<p style="color:#B3BEB9;margin:0 0 20px">Semua pengaturan bisa diubah kapan saja lewat Telegram. Kami tidak membatasi pilihan Anda, tapi agent selalu menampilkan apa artinya sebelum pengaturan berlaku.</p>
+<div style="background:#141B18;border:1px solid #1F5C41;border-radius:14px;padding:16px 18px;font-size:14px;color:#D3DBD7">Contoh: risiko 10% per trade berarti 6 loss beruntun bisa menghabiskan sekitar setengah modal. Risiko yang lebih besar mempercepat untung maupun rugi.</div>
 </div>
 <div class="g-risk" style="flex:1.4 1 420px;min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
-<div style="background:#111B2E;border:1px solid #22314F;border-radius:16px;padding:20px">
-<div style="font-weight:600;margin-bottom:6px">Risiko per trade</div><div style="font-size:14px;color:#9AA8C1">Persen dari equity. Bawaan 2%, bisa Anda ubah.</div>
-<div style="margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#E8C46A">/risk 2</div>
+<div style="background:#0E1412;border:1px solid #1E2A25;border-radius:16px;padding:20px">
+<div style="font-weight:600;margin-bottom:6px">Risiko per trade</div><div style="font-size:14px;color:#9BA7A1">Persen dari equity. Bawaan 2%, bisa Anda ubah.</div>
+<div style="margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#34D399">/risk 2</div>
 </div>
-<div style="background:#111B2E;border:1px solid #22314F;border-radius:16px;padding:20px">
-<div style="font-weight:600;margin-bottom:6px">Batas loss harian</div><div style="font-size:14px;color:#9AA8C1">Agent berhenti entry sampai sesi berikutnya setelah batas tercapai.</div>
-<div style="margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#E8C46A">/limit 6</div>
+<div style="background:#0E1412;border:1px solid #1E2A25;border-radius:16px;padding:20px">
+<div style="font-weight:600;margin-bottom:6px">Batas loss harian</div><div style="font-size:14px;color:#9BA7A1">Agent berhenti entry sampai sesi berikutnya setelah batas tercapai.</div>
+<div style="margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#34D399">/limit 6</div>
 </div>
-<div style="background:#111B2E;border:1px solid #22314F;border-radius:16px;padding:20px">
-<div style="font-weight:600;margin-bottom:6px">Partial di 1R</div><div style="font-size:14px;color:#9AA8C1">Ambil 50% di 1R, atau biarkan penuh ke target. BE di 1R tetap berlaku.</div>
-<div style="margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#E8C46A">/partial on</div>
+<div style="background:#0E1412;border:1px solid #1E2A25;border-radius:16px;padding:20px">
+<div style="font-weight:600;margin-bottom:6px">Partial di 1R</div><div style="font-size:14px;color:#9BA7A1">Ambil 50% di 1R, atau biarkan penuh ke target. BE di 1R tetap berlaku.</div>
+<div style="margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#34D399">/partial on</div>
 </div>
-<div style="background:#111B2E;border:1px solid #22314F;border-radius:16px;padding:20px">
-<div style="font-weight:600;margin-bottom:6px">Pause kapan saja</div><div style="font-size:14px;color:#9AA8C1">Hentikan entry baru dengan satu perintah. Posisi terbuka tetap dijaga SL-nya.</div>
-<div style="margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#E8C46A">/pause</div>
+<div style="background:#0E1412;border:1px solid #1E2A25;border-radius:16px;padding:20px">
+<div style="font-weight:600;margin-bottom:6px">Pause kapan saja</div><div style="font-size:14px;color:#9BA7A1">Hentikan entry baru dengan satu perintah. Posisi terbuka tetap dijaga SL-nya.</div>
+<div style="margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#34D399">/pause</div>
 </div>
-<div style="background:#111B2E;border:1px solid #22314F;border-radius:16px;padding:20px">
-<div style="font-weight:600;margin-bottom:6px">Penjaga berita</div><div style="font-size:14px;color:#9AA8C1">Entry ditahan di sekitar rilis berita ekonomi besar.</div>
+<div style="background:#0E1412;border:1px solid #1E2A25;border-radius:16px;padding:20px">
+<div style="font-weight:600;margin-bottom:6px">Penjaga berita</div><div style="font-size:14px;color:#9BA7A1">Entry ditahan di sekitar rilis berita ekonomi besar.</div>
 </div>
-<div style="background:#111B2E;border:1px solid #22314F;border-radius:16px;padding:20px">
-<div style="font-weight:600;margin-bottom:6px">Tahan gangguan VPS</div><div style="font-size:14px;color:#9AA8C1">Setelah restart, agent mengenali posisinya lagi dan melanjutkan SL, BE dan TP.</div>
+<div style="background:#0E1412;border:1px solid #1E2A25;border-radius:16px;padding:20px">
+<div style="font-weight:600;margin-bottom:6px">Tahan gangguan VPS</div><div style="font-size:14px;color:#9BA7A1">Setelah restart, agent mengenali posisinya lagi dan melanjutkan SL, BE dan TP.</div>
 </div>
 </div>
 </div>
 </section>
 
-<section id="hasil" style="border-top:1px solid #1C2A45;background:#0E1729">
+<section id="hasil" style="border-top:1px solid #161F1B;background:#0A0F0D">
 <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,96px) clamp(20px,5vw,48px)">
-<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#E8C46A;letter-spacing:1.5px;margin-bottom:10px">AUDIT LIVE · 100% ALGO TRADING</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#34D399;letter-spacing:1.5px;margin-bottom:10px">AUDIT LIVE · 100% ALGO TRADING</div>
 <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.4vw,42px);line-height:1.15;margin:0 0 12px;max-width:720px">Setiap trade AI Agent tercatat terbuka.</h2>
-<p style="color:#B6C2D9;max-width:680px;margin:0 0 20px">Menang, BE maupun kalah, lengkap dengan alasan eksekusi, SL, TP dan jalannya posisi. Data dikirim langsung oleh agent sejak Zone Strike aktif.</p>
+<p style="color:#B3BEB9;max-width:680px;margin:0 0 20px">Menang, BE maupun kalah, lengkap dengan alasan eksekusi, SL, TP dan jalannya posisi. Data dikirim langsung oleh agent sejak Zone Strike aktif.</p>
 <div class="tiles tiles4" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:14px">
 <div class="tile"><div class="tl">Total pips</div><div class="tv" id="tz-net">–</div></div>
 <div class="tile"><div class="tl">Total R</div><div class="tv" id="tz-r">–</div></div>
@@ -299,79 +305,79 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
 <div class="tile"><div class="tl">Win rate</div><div class="tv" id="tz-wr">–</div></div>
 </div>
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px">
-<a href="audit" style="background:#E8C46A;color:#241B04;font-weight:600;padding:13px 20px;border-radius:12px;min-height:46px;display:inline-flex;align-items:center">📊 Buka audit lengkap</a>
-<span id="tz-upd" style="font-size:13px;color:#9AA8C1">Memuat data live…</span>
+<a href="audit" style="background:#34D399;color:#02140B;font-weight:600;padding:13px 20px;border-radius:12px;min-height:46px;display:inline-flex;align-items:center">📊 Buka audit lengkap</a>
+<span id="tz-upd" style="font-size:13px;color:#9BA7A1">Memuat data live…</span>
 </div>
 </div>
 </section>
 
-<section id="daftar" style="border-top:1px solid #1C2A45">
+<section id="daftar" style="border-top:1px solid #161F1B">
 <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,96px) clamp(20px,5vw,48px)">
-<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#E8C46A;letter-spacing:1.5px;margin-bottom:10px">CARA SEWA</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#34D399;letter-spacing:1.5px;margin-bottom:10px">CARA SEWA</div>
 <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.4vw,42px);line-height:1.15;margin:0 0 36px;max-width:680px">Tanpa sewa VPS sendiri. Empat langkah dan AI Agent berjalan.</h2>
 <ol class="g-daftar" style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
-<li style="border-top:2px solid #E8C46A;padding-top:18px"><div style="font-family:'JetBrains Mono',monospace;color:#E8C46A;font-size:13px;margin-bottom:8px">Langkah 1</div><div style="font-weight:600;font-size:17px;margin-bottom:6px">Buka akun cent Vantage</div><div style="font-size:15px;color:#9AA8C1">Link pendaftaran partner kami ada di channel <a href="https://t.me/phantomgen3">@phantomgen3</a>. Akun cent membuat risiko tetap kecil walau modalnya kecil.</div></li>
-<li style="border-top:2px solid #E8C46A;padding-top:18px"><div style="font-family:'JetBrains Mono',monospace;color:#E8C46A;font-size:13px;margin-bottom:8px">Langkah 2</div><div style="font-weight:600;font-size:17px;margin-bottom:6px">Deposit, disarankan $50</div><div style="font-size:15px;color:#9AA8C1">Setara 5.000 USC. Dengan modal ini partial 50% di 1R tetap bisa berjalan.</div></li>
-<li style="border-top:2px solid #E8C46A;padding-top:18px"><div style="font-family:'JetBrains Mono',monospace;color:#E8C46A;font-size:13px;margin-bottom:8px">Langkah 3</div><div style="font-weight:600;font-size:17px;margin-bottom:6px">Kirim bukti ke admin</div><div style="font-size:15px;color:#9AA8C1">Screenshot nomor akun MT5 (jenis Cent) dan bukti deposit, ke admin <a href="https://t.me/phantomgen3_Admin">@phantomgen3_Admin</a>. Setelah akun dipastikan terdaftar lewat link partner kami, AI Agent diaktifkan. Password MT5 hanya diminta saat aktivasi, dan hanya oleh @phantomgen3_Admin.</div></li>
-<li style="border-top:2px solid #E8C46A;padding-top:18px"><div style="font-family:'JetBrains Mono',monospace;color:#E8C46A;font-size:13px;margin-bottom:8px">Langkah 4</div><div style="font-weight:600;font-size:17px;margin-bottom:6px">Pantau dan atur di Telegram</div><div style="font-size:15px;color:#9AA8C1">AI Agent berjalan 24 jam di VPS kami. Anda menerima kartu entry dan close, dan mengatur agent dengan perintah singkat.</div></li>
+<li style="border-top:2px solid #34D399;padding-top:18px"><div style="font-family:'JetBrains Mono',monospace;color:#34D399;font-size:13px;margin-bottom:8px">Langkah 1</div><div style="font-weight:600;font-size:17px;margin-bottom:6px">Buka akun cent Vantage</div><div style="font-size:15px;color:#9BA7A1">Link pendaftaran partner kami ada di channel <a href="https://t.me/phantomgen3">@phantomgen3</a>. Akun cent membuat risiko tetap kecil walau modalnya kecil.</div></li>
+<li style="border-top:2px solid #34D399;padding-top:18px"><div style="font-family:'JetBrains Mono',monospace;color:#34D399;font-size:13px;margin-bottom:8px">Langkah 2</div><div style="font-weight:600;font-size:17px;margin-bottom:6px">Deposit, disarankan $50</div><div style="font-size:15px;color:#9BA7A1">Setara 5.000 USC. Dengan modal ini partial 50% di 1R tetap bisa berjalan.</div></li>
+<li style="border-top:2px solid #34D399;padding-top:18px"><div style="font-family:'JetBrains Mono',monospace;color:#34D399;font-size:13px;margin-bottom:8px">Langkah 3</div><div style="font-weight:600;font-size:17px;margin-bottom:6px">Kirim bukti ke admin</div><div style="font-size:15px;color:#9BA7A1">Screenshot nomor akun MT5 (jenis Cent) dan bukti deposit, ke admin <a href="https://t.me/phantomgen3_Admin">@phantomgen3_Admin</a>. Setelah akun dipastikan terdaftar lewat link partner kami, AI Agent diaktifkan. Password MT5 hanya diminta saat aktivasi, dan hanya oleh @phantomgen3_Admin.</div></li>
+<li style="border-top:2px solid #34D399;padding-top:18px"><div style="font-family:'JetBrains Mono',monospace;color:#34D399;font-size:13px;margin-bottom:8px">Langkah 4</div><div style="font-weight:600;font-size:17px;margin-bottom:6px">Pantau dan atur di Telegram</div><div style="font-size:15px;color:#9BA7A1">AI Agent berjalan 24 jam di VPS kami. Anda menerima kartu entry dan close, dan mengatur agent dengan perintah singkat.</div></li>
 </ol>
-<p style="margin:22px 0 0"><a href="panduan" style="display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #2F426A;border-radius:12px;color:#EEF2F8;text-decoration:none">📘 Baca panduan sewa lengkap →</a></p>
+<p style="margin:22px 0 0"><a href="panduan" style="display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #34453D;border-radius:12px;color:#EEF2F0;text-decoration:none">📘 Baca panduan sewa lengkap →</a></p>
 </div>
 </section>
-<section id="harga" style="border-top:1px solid #1C2A45;background:#0E1729">
+<section id="harga" style="border-top:1px solid #161F1B;background:#0A0F0D">
 <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,96px) clamp(20px,5vw,48px)">
 <div style="text-align:center;max-width:640px;margin:0 auto 36px">
-<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#E8C46A;letter-spacing:1.5px;margin-bottom:10px">HARGA</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#34D399;letter-spacing:1.5px;margin-bottom:10px">HARGA</div>
 <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.4vw,42px);line-height:1.15;margin:0 0 12px">Coba sebulan dulu, gratis.</h2>
-<p style="color:#B6C2D9;margin:0">Beta dibuka untuk 10 slot. Setelah bulan pertama, lanjut hanya kalau Anda mau.</p>
+<p style="color:#B3BEB9;margin:0">Beta dibuka untuk 10 slot. Setelah bulan pertama, lanjut hanya kalau Anda mau.</p>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;max-width:860px;margin:0 auto">
-<div style="background:#111B2E;border:2px solid #E8C46A;border-radius:20px;padding:28px">
-<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:14px"><span style="font-weight:600">Beta · bulan pertama</span><span style="background:#E8C46A;color:#241B04;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px">10 slot</span></div>
+<div style="background:#0E1412;border:2px solid #34D399;border-radius:20px;padding:28px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:14px"><span style="font-weight:600">Beta · bulan pertama</span><span style="background:#34D399;color:#02140B;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px">10 slot</span></div>
 <div style="font-family:'Space Grotesk',sans-serif;font-size:44px;font-weight:600;line-height:1.1">Gratis</div>
-<div style="font-size:14px;color:#9AA8C1;margin-bottom:20px">untuk akun yang dibuka lewat link partner Vantage kami</div>
-<ul style="list-style:none;padding:0;margin:0 0 24px;display:grid;gap:10px;font-size:15px;color:#C9D3E6">
+<div style="font-size:14px;color:#9BA7A1;margin-bottom:20px">untuk akun yang dibuka lewat link partner Vantage kami</div>
+<ul style="list-style:none;padding:0;margin:0 0 24px;display:grid;gap:10px;font-size:15px;color:#CAD2CE">
 <li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6FDCA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 12l5 5L20 7"/></svg>VPS dan AI Agent berjalan 24 jam</li>
 <li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6FDCA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 12l5 5L20 7"/></svg>Kartu entry dan close di Telegram</li>
 <li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6FDCA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 12l5 5L20 7"/></svg>Atur risiko, batas loss, partial, pause</li>
 </ul>
-<a href="https://t.me/phantomgen3" style="background:#E8C46A;color:#241B04;font-weight:600;padding:14px 20px;border-radius:12px;min-height:48px;display:flex;align-items:center;justify-content:center">Ambil slot beta</a>
+<a href="https://t.me/phantomgen3" style="background:#34D399;color:#02140B;font-weight:600;padding:14px 20px;border-radius:12px;min-height:48px;display:flex;align-items:center;justify-content:center">Ambil slot beta</a>
 </div>
-<div style="background:#111B2E;border:1px solid #22314F;border-radius:20px;padding:28px">
+<div style="background:#0E1412;border:1px solid #1E2A25;border-radius:20px;padding:28px">
 <div style="font-weight:600;margin-bottom:14px">Bulan berikutnya</div>
 <div style="font-family:'Space Grotesk',sans-serif;font-size:44px;font-weight:600;line-height:1.1">Rp 300.000</div>
-<div style="font-size:14px;color:#9AA8C1;margin-bottom:20px">per bulan, berhenti kapan saja</div>
-<ul style="list-style:none;padding:0;margin:0 0 24px;display:grid;gap:10px;font-size:15px;color:#C9D3E6">
+<div style="font-size:14px;color:#9BA7A1;margin-bottom:20px">per bulan, berhenti kapan saja</div>
+<ul style="list-style:none;padding:0;margin:0 0 24px;display:grid;gap:10px;font-size:15px;color:#CAD2CE">
 <li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6FDCA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 12l5 5L20 7"/></svg>Semua fitur bulan pertama</li>
 <li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6FDCA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 12l5 5L20 7"/></svg>Pembaruan strategi yang sudah diuji</li>
 <li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6FDCA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 12l5 5L20 7"/></svg>Bayar via transfer bank, QRIS atau e-wallet</li>
 </ul>
-<a href="https://t.me/phantomgen3_Admin" style="border:1px solid #2F426A;color:#EEF2F8;font-weight:500;padding:14px 20px;border-radius:12px;min-height:48px;display:flex;align-items:center;justify-content:center">💬 Chat Admin Phantom</a>
+<a href="https://t.me/phantomgen3_Admin" style="border:1px solid #34453D;color:#EEF2F0;font-weight:500;padding:14px 20px;border-radius:12px;min-height:48px;display:flex;align-items:center;justify-content:center">💬 Chat Admin Phantom</a>
 </div>
 </div>
 </div>
 </section>
 
-<section id="faq" style="border-top:1px solid #1C2A45">
+<section id="faq" style="border-top:1px solid #161F1B">
 <div style="max-width:860px;margin:0 auto;padding:clamp(56px,8vw,96px) clamp(20px,5vw,48px)">
-<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#E8C46A;letter-spacing:1.5px;margin-bottom:10px">FAQ</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#34D399;letter-spacing:1.5px;margin-bottom:10px">FAQ</div>
 <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.4vw,42px);line-height:1.15;margin:0 0 28px">Pertanyaan yang sering muncul</h2>
 <div style="display:grid;gap:10px">
-<details style="background:#111B2E;border:1px solid #22314F;border-radius:14px;padding:4px 20px"><summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:52px;font-weight:500">Apakah profit dijamin?<span class="fq-plus" style="color:#E8C46A;font-size:22px;transition:transform .2s">+</span></summary><p style="color:#9AA8C1;margin:0 0 16px;font-size:15px">Tidak. AI Agent bisa dan akan mengalami loss, termasuk loss beruntun. Yang kami jamin adalah aturan yang sama setiap hari dan catatan terbuka untuk setiap trade.</p></details>
-<details style="background:#111B2E;border:1px solid #22314F;border-radius:14px;padding:4px 20px"><summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:52px;font-weight:500">Berapa modal minimum?<span class="fq-plus" style="color:#E8C46A;font-size:22px;transition:transform .2s">+</span></summary><p style="color:#9AA8C1;margin:0 0 16px;font-size:15px">Kami sarankan $50 (5.000 USC) di akun cent. Di bawah itu, lot sering terlalu kecil untuk partial 50% di 1R.</p></details>
-<details style="background:#111B2E;border:1px solid #22314F;border-radius:14px;padding:4px 20px"><summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:52px;font-weight:500">Kenapa harus akun cent?<span class="fq-plus" style="color:#E8C46A;font-size:22px;transition:transform .2s">+</span></summary><p style="color:#9AA8C1;margin:0 0 16px;font-size:15px">Di akun standard, lot terkecil emas sudah sekitar $1 per pergerakan $1. Dengan modal kecil, satu trade bisa memakan puluhan persen modal. Akun cent membuat risiko per trade tetap sesuai pengaturan Anda.</p></details>
-<details style="background:#111B2E;border:1px solid #22314F;border-radius:14px;padding:4px 20px"><summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:52px;font-weight:500">Apakah password MT5 saya aman?<span class="fq-plus" style="color:#E8C46A;font-size:22px;transition:transform .2s">+</span></summary><p style="color:#9AA8C1;margin:0 0 16px;font-size:15px">Password MT5 hanya diminta sekali saat aktivasi, hanya oleh @phantomgen3_Admin, lalu disimpan terenkripsi di VPS Phantom dan tidak ditulis di log. Password MT5 hanya untuk trading; penarikan dana tetap lewat portal Vantage, dan login portal tidak pernah kami minta. Anda bisa menggantinya kapan saja, dan agent berhenti sampai password baru diberikan.</p></details>
-<details style="background:#111B2E;border:1px solid #22314F;border-radius:14px;padding:4px 20px"><summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:52px;font-weight:500">Bisa berhenti kapan saja?<span class="fq-plus" style="color:#E8C46A;font-size:22px;transition:transform .2s">+</span></summary><p style="color:#9AA8C1;margin:0 0 16px;font-size:15px">Bisa. Kirim /pause untuk menghentikan entry baru, atau minta admin melepas akun Anda dari agent. Dana tetap di akun Vantage Anda sendiri.</p></details>
-<details style="background:#111B2E;border:1px solid #22314F;border-radius:14px;padding:4px 20px"><summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:52px;font-weight:500">Bisa pakai broker lain?<span class="fq-plus" style="color:#E8C46A;font-size:22px;transition:transform .2s">+</span></summary><p style="color:#9AA8C1;margin:0 0 16px;font-size:15px">Untuk saat ini hanya Vantage akun cent, karena aturan agent diuji pada data dan kondisi broker tersebut.</p></details>
+<details style="background:#0E1412;border:1px solid #1E2A25;border-radius:14px;padding:4px 20px"><summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:52px;font-weight:500">Apakah profit dijamin?<span class="fq-plus" style="color:#34D399;font-size:22px;transition:transform .2s">+</span></summary><p style="color:#9BA7A1;margin:0 0 16px;font-size:15px">Tidak. AI Agent bisa dan akan mengalami loss, termasuk loss beruntun. Yang kami jamin adalah aturan yang sama setiap hari dan catatan terbuka untuk setiap trade.</p></details>
+<details style="background:#0E1412;border:1px solid #1E2A25;border-radius:14px;padding:4px 20px"><summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:52px;font-weight:500">Berapa modal minimum?<span class="fq-plus" style="color:#34D399;font-size:22px;transition:transform .2s">+</span></summary><p style="color:#9BA7A1;margin:0 0 16px;font-size:15px">Kami sarankan $50 (5.000 USC) di akun cent. Di bawah itu, lot sering terlalu kecil untuk partial 50% di 1R.</p></details>
+<details style="background:#0E1412;border:1px solid #1E2A25;border-radius:14px;padding:4px 20px"><summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:52px;font-weight:500">Kenapa harus akun cent?<span class="fq-plus" style="color:#34D399;font-size:22px;transition:transform .2s">+</span></summary><p style="color:#9BA7A1;margin:0 0 16px;font-size:15px">Di akun standard, lot terkecil emas sudah sekitar $1 per pergerakan $1. Dengan modal kecil, satu trade bisa memakan puluhan persen modal. Akun cent membuat risiko per trade tetap sesuai pengaturan Anda.</p></details>
+<details style="background:#0E1412;border:1px solid #1E2A25;border-radius:14px;padding:4px 20px"><summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:52px;font-weight:500">Apakah password MT5 saya aman?<span class="fq-plus" style="color:#34D399;font-size:22px;transition:transform .2s">+</span></summary><p style="color:#9BA7A1;margin:0 0 16px;font-size:15px">Password MT5 hanya diminta sekali saat aktivasi, hanya oleh @phantomgen3_Admin, lalu disimpan terenkripsi di VPS Phantom dan tidak ditulis di log. Password MT5 hanya untuk trading; penarikan dana tetap lewat portal Vantage, dan login portal tidak pernah kami minta. Anda bisa menggantinya kapan saja, dan agent berhenti sampai password baru diberikan.</p></details>
+<details style="background:#0E1412;border:1px solid #1E2A25;border-radius:14px;padding:4px 20px"><summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:52px;font-weight:500">Bisa berhenti kapan saja?<span class="fq-plus" style="color:#34D399;font-size:22px;transition:transform .2s">+</span></summary><p style="color:#9BA7A1;margin:0 0 16px;font-size:15px">Bisa. Kirim /pause untuk menghentikan entry baru, atau minta admin melepas akun Anda dari agent. Dana tetap di akun Vantage Anda sendiri.</p></details>
+<details style="background:#0E1412;border:1px solid #1E2A25;border-radius:14px;padding:4px 20px"><summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:52px;font-weight:500">Bisa pakai broker lain?<span class="fq-plus" style="color:#34D399;font-size:22px;transition:transform .2s">+</span></summary><p style="color:#9BA7A1;margin:0 0 16px;font-size:15px">Untuk saat ini hanya Vantage akun cent, karena aturan agent diuji pada data dan kondisi broker tersebut.</p></details>
 </div>
 </div>
 </section>
 
-<section aria-labelledby="disclaimer-title" style="border-top:1px solid #1C2A45;background:#0E1729">
+<section aria-labelledby="disclaimer-title" style="border-top:1px solid #161F1B;background:#0A0F0D">
 <div style="max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,64px) clamp(20px,5vw,48px)">
-<div style="border:1px solid #5A4A1A;background:#1A1709;border-radius:18px;padding:clamp(20px,3vw,32px)">
-<h2 id="disclaimer-title" style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;margin:0 0 12px;color:#F1DDA4;display:flex;align-items:center;gap:10px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F1DDA4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.01"/></svg>Peringatan risiko</h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px 28px;font-size:14px;line-height:1.7;color:#D9CDA6">
+<div style="border:1px solid #1F5C41;background:#0E1412;border-radius:18px;padding:clamp(20px,3vw,32px)">
+<h2 id="disclaimer-title" style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;margin:0 0 12px;color:#D3DBD7;display:flex;align-items:center;gap:10px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D3DBD7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.01"/></svg>Peringatan risiko</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px 28px;font-size:14px;line-height:1.7;color:#BCC6C1">
 <p style="margin:0">Trading CFD emas (XAUUSD) berisiko tinggi dan dapat menyebabkan kehilangan sebagian atau seluruh modal. Jangan memakai dana yang tidak siap Anda tanggung kehilangannya.</p>
 <p style="margin:0">Hasil masa lalu dan hasil simulasi tidak menjamin hasil di masa depan. Tidak ada jaminan profit dalam bentuk apa pun.</p>
 <p style="margin:0">Risiko per trade, batas loss harian dan pengaturan lain ditentukan oleh penyewa. Penyewa bertanggung jawab penuh atas pengaturan yang dipilih dan hasil akunnya.</p>
@@ -382,11 +388,11 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
 </div>
 </section>
 
-<footer style="border-top:1px solid #1C2A45">
-<div style="max-width:1180px;margin:0 auto;padding:32px clamp(20px,5vw,48px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;font-size:14px;color:#9AA8C1">
-<span style="font-family:'Space Grotesk',sans-serif;font-weight:600;color:#EEF2F8">Phantom <span style="color:#E8C46A">Gen 3</span></span>
+<footer style="border-top:1px solid #161F1B">
+<div style="max-width:1180px;margin:0 auto;padding:32px clamp(20px,5vw,48px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;font-size:14px;color:#9BA7A1">
+<span style="font-family:'Space Grotesk',sans-serif;font-weight:600;color:#EEF2F0">Phantom <span style="color:#34D399">Gen 3</span></span>
 <div style="display:flex;flex-wrap:wrap;gap:10px 24px">
-<a href="https://t.me/phantomgen3" style="color:#B6C2D9">Channel Telegram @phantomgen3</a>
+<a href="https://t.me/phantomgen3" style="color:#B3BEB9">Channel Telegram @phantomgen3</a>
 </div>
 <span>© 2026 Phantom Gen 3</span>
 </div>
@@ -398,7 +404,7 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
   function $(id) { return document.getElementById(id); }
   function num(v, d) { return Number(v).toLocaleString("id-ID", { minimumFractionDigits: d, maximumFractionDigits: d }); }
   function signed(v, d, s) { if (v === null || v === undefined) return "–"; return (v > 0 ? "+" : v < 0 ? "−" : "") + num(Math.abs(v), d) + (s || ""); }
-  function col(v) { return v > 0 ? "#6FDCA6" : v < 0 ? "#FF9C92" : "#EEF2F8"; }
+  function col(v) { return v > 0 ? "#6FDCA6" : v < 0 ? "#FF9C92" : "#EEF2F0"; }
   function set(id, t, c) { var e = $(id); if (!e) return; e.textContent = t; if (c) e.style.color = c; }
   fetch("audit.json?t=" + Date.now(), { cache: "no-store" }).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (d) {
     var s = d.stats;
