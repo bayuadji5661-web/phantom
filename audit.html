@@ -105,13 +105,13 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
 <div id="au-msg" role="status" style="display:none;border:1px dashed #2F426A;border-radius:14px;padding:16px 18px;color:#9AA8C1;font-size:14px;text-align:center;margin-bottom:16px"></div>
 
 <div class="tiles" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:16px">
-<div class="tile"><div class="tl">Profit bersih</div><div class="tv" id="st-net">–</div><div class="ts" id="st-net-s">USC, setelah biaya</div></div>
+<div class="tile"><div class="tl">Total pips</div><div class="tv" id="st-net">–</div><div class="ts" id="st-net-s">pips</div></div>
 <div class="tile"><div class="tl">Total trade</div><div class="tv" id="st-trades">–</div><div class="ts" id="st-trades-s">menang · kalah · BE</div></div>
 <div class="tile"><div class="tl">Win rate</div><div class="tv" id="st-wr">–</div><div class="ts">BE dihitung terpisah</div></div>
-<div class="tile"><div class="tl">Profit factor</div><div class="tv" id="st-pf">–</div><div class="ts">total untung ÷ total rugi</div></div>
-<div class="tile"><div class="tl">Rata-rata RR win</div><div class="tv" id="st-avgwin">–</div><div class="ts">R per trade yang menang</div></div>
-<div class="tile"><div class="tl">Rata-rata loss</div><div class="tv" id="st-avgloss">–</div><div class="ts">R per trade yang kalah</div></div>
-<div class="tile"><div class="tl">Expectancy</div><div class="tv" id="st-exp">–</div><div class="ts">R rata-rata per trade</div></div>
+<div class="tile"><div class="tl">Profit factor</div><div class="tv" id="st-pf">–</div><div class="ts">total untung ÷ total rugi (R)</div></div>
+<div class="tile"><div class="tl">Rata-rata menang</div><div class="tv" id="st-avgwin">–</div><div class="ts" id="st-avgwin-s">pips per trade menang</div></div>
+<div class="tile"><div class="tl">Rata-rata kalah</div><div class="tv" id="st-avgloss">–</div><div class="ts" id="st-avgloss-s">pips per trade kalah</div></div>
+<div class="tile"><div class="tl">Expectancy</div><div class="tv" id="st-exp">–</div><div class="ts" id="st-exp-s">pips rata-rata per trade</div></div>
 <div class="tile"><div class="tl">Drawdown terdalam</div><div class="tv" id="st-dd">–</div><div class="ts" id="st-dd-s">dari puncak kurva</div></div>
 <div class="tile"><div class="tl">Rata-rata durasi</div><div class="tv" id="st-dur">–</div><div class="ts">entry sampai close</div></div>
 <div class="tile"><div class="tl">Loss beruntun terpanjang</div><div class="tv" id="st-streak">–</div><div class="ts">jumlah trade</div></div>
@@ -123,7 +123,7 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
 <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px;font-size:14px">
 <span><span style="font-weight:600">Kurva hasil kumulatif</span> <span id="curve-since" style="color:#9AA8C1"></span></span>
 <div role="group" aria-label="Satuan kurva" style="display:flex;gap:6px">
-<button type="button" class="chip on" data-unit="r">R</button><button type="button" class="chip" data-unit="pl">USC</button>
+<button type="button" class="chip on" data-unit="pips">Pips</button><button type="button" class="chip" data-unit="r">R</button>
 </div>
 </div>
 <div id="curve" style="height:200px;position:relative"></div>
@@ -142,7 +142,7 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
 </div>
 <div id="trades" style="display:grid;gap:10px"></div>
 <button type="button" id="more" style="display:none;margin:14px auto 0;background:transparent;color:#EEF2F8;border:1px solid #2F426A;border-radius:12px;padding:12px 18px;font:500 14px Inter,sans-serif;min-height:44px">Tampilkan lebih banyak</button>
-<p style="font-size:12px;color:#7F8DA8;margin:16px 0 0">R = laba/rugi bersih dibagi risiko awal trade (setelah spread, komisi dan swap). Posisi yang masih berjalan tidak ditampilkan rinciannya sampai ditutup.</p>
+<p style="font-size:12px;color:#7F8DA8;margin:16px 0 0"><b style="color:#9AA8C1">10 point = 1 pip</b> (contoh: 3800.00 → 3800.10 = 1 pip). Pips = pergerakan harga dari entry ke exit, ditimbang lot saat separuh posisi ditutup di TP1, sebelum biaya. R = hasil bersih dibagi risiko awal trade, setelah spread, komisi dan swap. Posisi yang masih berjalan tidak ditampilkan rinciannya sampai ditutup.</p>
 </div>
 </section>
 <section aria-labelledby="disclaimer-title" style="border-top:1px solid #1C2A45;background:#0E1729">
@@ -172,7 +172,7 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
 <script>
 (function () {
   "use strict";
-  var DATA = null, FILTER = "all", SHOWN = 20, UNIT = "r";
+  var DATA = null, FILTER = "all", SHOWN = 20, UNIT = "pips";
   var C = { txt: "#EEF2F8", dim: "#9AA8C1", mute: "#7F8DA8", gold: "#E8C46A", red: "#FF9C92", green: "#6FDCA6",
             card: "#111B2E", line: "#22314F", deep: "#0B1220" };
   var STRAT = {
@@ -224,18 +224,21 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
 
   // ------------------------------------------------------------------ stats
   function renderStats(d) {
-    var s = d.stats, cur = d.currency || "USC";
-    setText("st-net", signed(s.net_pl, 2), color(s.net_pl));
-    setText("st-net-s", cur + ", setelah biaya · " + signed(s.total_r, 2, "R"));
+    var s = d.stats;
+    setText("st-net", signed(s.total_pips, 1), color(s.total_pips));
+    setText("st-net-s", "pips · " + signed(s.total_r, 2, "R") + " setelah biaya");
     setText("st-trades", String(s.trades));
     setText("st-trades-s", s.wins + " menang · " + s.losses + " kalah · " + s.be + " BE");
     setText("st-wr", s.win_rate === null ? "–" : num(s.win_rate, 1) + "%");
-    setText("st-pf", s.profit_factor === null ? (s.trades && s.losses === 0 && s.net_pl > 0 ? "∞" : "–") : num(s.profit_factor, 2));
-    setText("st-avgwin", s.avg_win_r === null ? "–" : signed(s.avg_win_r, 2, "R"), s.avg_win_r ? C.green : null);
-    setText("st-avgloss", s.avg_loss_r === null ? "–" : signed(s.avg_loss_r, 2, "R"), s.avg_loss_r ? C.red : null);
-    setText("st-exp", s.expectancy_r === null ? "–" : signed(s.expectancy_r, 2, "R"), color(s.expectancy_r || 0));
-    setText("st-dd", s.max_dd_r ? "−" + num(s.max_dd_r, 2) + "R" : "0R");
-    setText("st-dd-s", s.max_dd_pl ? "−" + num(s.max_dd_pl, 2) + " " + cur + " dari puncak" : "dari puncak kurva");
+    setText("st-pf", s.profit_factor === null ? (s.trades && s.losses === 0 && s.total_r > 0 ? "∞" : "–") : num(s.profit_factor, 2));
+    setText("st-avgwin", s.avg_win_pips === null ? "–" : signed(s.avg_win_pips, 1), s.avg_win_pips ? C.green : null);
+    setText("st-avgwin-s", s.avg_win_r === null ? "pips per trade menang" : "pips · " + signed(s.avg_win_r, 2, "R"));
+    setText("st-avgloss", s.avg_loss_pips === null ? "–" : signed(s.avg_loss_pips, 1), s.avg_loss_pips ? C.red : null);
+    setText("st-avgloss-s", s.avg_loss_r === null ? "pips per trade kalah" : "pips · " + signed(s.avg_loss_r, 2, "R"));
+    setText("st-exp", s.expectancy_pips === null ? "–" : signed(s.expectancy_pips, 1), color(s.expectancy_pips || 0));
+    setText("st-exp-s", s.expectancy_r === null ? "pips rata-rata per trade" : "pips per trade · " + signed(s.expectancy_r, 2, "R"));
+    setText("st-dd", s.max_dd_pips ? "−" + num(s.max_dd_pips, 1) : "0");
+    setText("st-dd-s", "pips dari puncak · " + (s.max_dd_r ? "−" + num(s.max_dd_r, 2) + "R" : "0R"));
     setText("st-dur", dur(s.avg_duration_min));
     setText("st-streak", String(s.max_loss_streak));
   }
@@ -260,14 +263,14 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
       h("div", "display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;font-size:12px;color:" + C.dim, [
         cell("Trade", String(s.trades)),
         cell("Win rate", s.win_rate === null ? "–" : num(s.win_rate, 0) + "%"),
-        cell("Total R", signed(s.total_r, 2, "R"), color(s.total_r)),
-        cell("Rata RR", s.avg_win_r === null ? "–" : num(s.avg_win_r, 2) + "R")])]);
+        cell("Total pips", signed(s.total_pips || 0, 1), color(s.total_pips || 0)),
+        cell("Total R", signed(s.total_r, 2, "R"), color(s.total_r))])]);
   }
 
   function renderStrats(d) {
     var box = $("strat-cards"); box.textContent = "";
     var per = d.per_strategy || {};
-    box.appendChild(stratCard("ZONE_STRIKE", per.ZONE_STRIKE || { trades: 0, win_rate: null, total_r: 0, avg_win_r: null }));
+    box.appendChild(stratCard("ZONE_STRIKE", per.ZONE_STRIKE || { trades: 0, win_rate: null, total_r: 0, total_pips: 0 }));
     box.appendChild(stratCard("SWEEP_HUNTER", per.SWEEP_HUNTER || null));
     Object.keys(per).forEach(function (k) {
       if (k !== "ZONE_STRIKE" && k !== "SWEEP_HUNTER") box.appendChild(stratCard(k, per[k]));
@@ -280,14 +283,14 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
   function renderCurve(d) {
     var box = $("curve"); box.textContent = "";
     setText("curve-since", "· sejak " + fmtDate(d.since));
-    var pts = [{ r: 0, pl: 0, t: null }].concat(d.curve || []);
+    var pts = [{ r: 0, pips: 0, t: null }].concat(d.curve || []);
     if (pts.length < 2) {
       box.appendChild(h("div", "height:100%;border:1px dashed #2F426A;border-radius:12px;display:flex;align-items:center;justify-content:center;color:" + C.mute + ";font-size:14px;text-align:center;padding:16px",
         ["Kurva tampil setelah trade pertama ditutup."]));
       return;
     }
     var W = box.clientWidth || 600, H = box.clientHeight || 200, pl = 52, pr = 10, pt = 10, pb = 22;
-    var vals = pts.map(function (p) { return UNIT === "r" ? p.r : p.pl; });
+    var vals = pts.map(function (p) { return UNIT === "r" ? p.r : p.pips; });
     var lo = Math.min.apply(null, vals.concat([0])), hi = Math.max.apply(null, vals.concat([0]));
     if (hi - lo < 1e-9) { hi += 1; lo -= 1; }
     var pad = (hi - lo) * 0.08; hi += pad; lo -= pad;
@@ -296,7 +299,7 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
     var NS = "http://www.w3.org/2000/svg";
     var svg = document.createElementNS(NS, "svg");
     svg.setAttribute("width", W); svg.setAttribute("height", H); svg.setAttribute("role", "img");
-    svg.setAttribute("aria-label", "Kurva hasil kumulatif dalam " + (UNIT === "r" ? "R" : (d.currency || "USC")));
+    svg.setAttribute("aria-label", "Kurva hasil kumulatif dalam " + (UNIT === "r" ? "R" : "pips"));
     function el(n, a) { var e = document.createElementNS(NS, n); for (var k in a) e.setAttribute(k, a[k]); svg.appendChild(e); return e; }
     [hi - pad, (hi + lo) / 2, lo + pad].forEach(function (v) {
       el("line", { x1: pl, x2: W - pr, y1: y(v), y2: y(v), stroke: C.line, "stroke-width": 1 });
@@ -313,7 +316,7 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
       if (!i) return;
       var c = el("circle", { cx: x(i), cy: y(v), r: pts.length > 60 ? 0 : 3, fill: col });
       var ttl = document.createElementNS(NS, "title");
-      ttl.textContent = fmtT(pts[i].t, true) + " WIB · " + (UNIT === "r" ? signed(v, 2, "R") : signed(v, 2, " " + (d.currency || "USC")));
+      ttl.textContent = fmtT(pts[i].t, true) + " WIB · " + (UNIT === "r" ? signed(v, 2, "R") : signed(v, 1, " pips"));
       c.appendChild(ttl);
     });
     var lt = el("text", { x: W - pr, y: H - 4, "text-anchor": "end", fill: C.dim, "font-size": 11, "font-family": "JetBrains Mono, monospace" });
@@ -335,8 +338,8 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
       badge,
       h("span", "font-family:'JetBrains Mono',monospace;font-size:13px;color:" + C.txt + ";flex:1 1 170px", [price(t.entry) + " → " + price(t.exit)]),
       h("span", "font-size:13px;color:" + C.dim + ";min-width:84px", [dur(t.duration_min)]),
-      h("span", "font-family:'JetBrains Mono',monospace;font-size:14px;color:" + rCol + ";min-width:64px;text-align:right", [signed(t.r, 2, "R")]),
-      h("span", "font-family:'JetBrains Mono',monospace;font-size:13px;color:" + rCol + ";min-width:92px;text-align:right", [signed(t.pl, 2, " " + (DATA.currency || "USC"))])
+      h("span", "font-family:'JetBrains Mono',monospace;font-size:14px;color:" + rCol + ";min-width:96px;text-align:right", [signed(t.pips, 1, " pips")]),
+      h("span", "font-family:'JetBrains Mono',monospace;font-size:12px;color:" + C.dim + ";min-width:58px;text-align:right", [signed(t.r, 2, "R")])
     ]);
     var chev = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     chev.setAttribute("class", "chev"); chev.setAttribute("width", "20"); chev.setAttribute("height", "20");
@@ -353,10 +356,10 @@ p[style*="margin:0 0 40px"]{margin-bottom:24px!important}
     }
     var tp2Label = "TP2 · likuiditas" + (t.tp2_r ? " (" + num(t.tp2_r, 2) + "R)" : "");
     var grid = h("div", "display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin-bottom:14px", [
-      box("Entry", price(t.entry)), box("Stop loss", price(t.sl), C.red),
+      box("Entry", price(t.entry)), box("Stop loss · " + num(t.sl_pips || 0, 1) + " pips", price(t.sl), C.red),
       box(t.partial_plan === "TP1_FULL" ? "TP" : "TP1 · 1R", price(t.tp1), C.green),
       t.partial_plan === "TP1_FULL" ? null : box(tp2Label, price(t.tp2), C.green),
-      box("Exit", price(t.exit)), box("Lot", t.lot),
+      box("Exit", price(t.exit)), box("Hasil", signed(t.pips, 1, " pips"), rCol),
       box("Risiko", t.risk_pct === null || t.risk_pct === undefined ? "–" : num(t.risk_pct, 2) + "%"),
       box("Durasi", dur(t.duration_min))]);
     var left = h("div", "flex:1 1 300px;min-width:0", [grid,
