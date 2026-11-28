@@ -167,8 +167,8 @@ body{background-image:radial-gradient(900px 420px at 15% -80px,rgba(52,211,153,.
     </li>
     <li>
       <h3>Verifikasi & aktivasi <span class="tag adm">ADMIN</span></h3>
-      <p>Admin mencocokkan nomor akun Anda di portal partner Vantage. Setelah cocok, admin meminta <b>login MT5</b> akun tersebut (nomor akun, password trading dan server) untuk menyambungkan agent di VPS kami.</p>
-      <ul><li>Berikan hanya ke <a href="https://t.me/phantomgen3_Admin">@phantomgen3_Admin</a>, bukan ke akun lain yang mengaku admin.</li><li>Yang diminta hanya password <b>MT5</b>. Password email atau portal Vantage <b>tidak pernah</b> diminta.</li><li>Setelah agent aktif, hapus pesan berisi password dari chat.</li></ul>
+      <p>Admin mencocokkan nomor akun Anda di portal partner Vantage. Setelah cocok, admin mengirim <b>link sambung</b> ke bot <b>@PhantomGen3_bot</b>. Buka link itu, lalu ketuk <b>🔐 Isi / ganti password MT5</b> dan isi password trading MT5 Anda di form.</p>
+      <ul><li>Password <b>dienkripsi di HP Anda</b> sebelum dikirim. Telegram, website dan admin hanya melihat teks acak; hanya server Phantom yang bisa membukanya.</li><li><b>Jangan pernah mengirim password lewat chat</b>, termasuk ke admin. Admin tidak pernah memintanya.</li><li>Yang diisi hanya password <b>MT5</b>. Password email atau portal Vantage <b>tidak pernah</b> diminta.</li><li>Setelah password diterima, admin mengaktifkan agent untuk akun Anda.</li></ul>
     </li>
     <li>
       <h3>Pantau di Telegram <span class="tag you">ANDA</span></h3>
@@ -183,16 +183,15 @@ body{background-image:radial-gradient(900px 420px at 15% -80px,rgba(52,211,153,.
   <table>
     <tr><td><code>/risk 2</code></td><td>Risiko per trade, persen dari ekuitas (bawaan 2%)</td></tr>
     <tr><td><code>/limit 6</code></td><td>Batas loss harian; agent berhenti entry sampai sesi berikutnya</td></tr>
-    <tr><td><code>/partial on</code></td><td>Tutup 50% di 1R, atau <code>off</code> untuk dibiarkan penuh. BE di 1R tetap berlaku</td></tr>
+    <tr><td><code>/partial on</code></td><td>Di TP1 (1R) 50% lot ditutup dan SL dipindah ke entry (BE). <code>/partial off</code>: di TP1 hanya SL ke BE, seluruh lot dibiarkan ke TP2</td></tr>
     <tr><td><code>/pause</code></td><td>Hentikan entry baru; posisi terbuka tetap dijaga SL-nya</td></tr>
   </table>
-  <div class="note">Perintah pengaturan penyewa dirilis bersamaan dengan dibukanya slot beta. Sampai saat itu, perubahan pengaturan dibantu admin.</div>
 </section>
 
 <section id="tanya">
   <h2>Pertanyaan umum</h2>
   <details><summary>Apakah profit dijamin?</summary><p>Tidak. Agent bisa dan akan mengalami loss. Lihat semua hasil apa adanya di <a href="/audit">audit live</a>.</p></details>
-  <details><summary>Apakah aman memberikan password MT5?</summary><p>Password MT5 hanya bisa dipakai untuk trading. Penarikan dana hanya bisa lewat portal Vantage dengan login Anda sendiri, yang tidak pernah kami minta. Password disimpan terenkripsi di VPS Phantom, dan Anda bisa menggantinya kapan saja untuk memutus akses.</p></details>
+  <details><summary>Apakah aman memberikan password MT5?</summary><p>Password MT5 hanya bisa dipakai untuk trading. Penarikan dana hanya bisa lewat portal Vantage dengan login Anda sendiri, yang tidak pernah kami minta. Password Anda isi sendiri lewat form terenkripsi di bot, tidak pernah lewat chat, lalu disimpan terenkripsi di VPS Phantom. Anda bisa menggantinya kapan saja untuk memutus akses.</p></details>
   <details><summary>Apakah dana saya dipegang Phantom?</summary><p>Tidak. Dana tetap di akun Vantage atas nama Anda. Deposit dan penarikan hanya bisa Anda lakukan sendiri lewat portal Vantage.</p></details>
   <details><summary>Bisa berhenti kapan saja?</summary><p>Bisa. Kabari admin, akun Anda dilepas dari agent, lalu ganti password MT5 Anda.</p></details>
   <details><summary>Kenapa disarankan akun Cent? Bisa pakai Standard?</summary><p>Akun Cent memungkinkan ukuran lot yang sangat kecil, sehingga risiko per trade tetap terukur walau modalnya kecil. Akun Standard STP boleh dipakai, tapi lot terkecilnya 100 kali lebih besar. Dengan modal di bawah $1.000, agent akan sering melewati setup karena lot minimum sudah melebihi batas risiko 2%, dan partial di 1R tidak berjalan. Akun Raw ECN dan Pro ECN tidak bisa ikut program.</p></details>
