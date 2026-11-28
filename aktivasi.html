@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="robots" content="noindex">
+<title>Aktivasi akun · Phantom Gen 3</title>
+<link rel="icon" href="/favicon.png">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+:root{--bg:#060908;--card:#0D1512;--line:#22322B;--fg:#EEF2F0;--mute:#9BA7A1;--acc:#34D399;--err:#F87171}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:440px;margin:0 auto;padding:22px 18px 40px}
+.top{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.top img{width:34px;height:34px;border-radius:9px}
+h1{font-size:20px;margin:0;background:linear-gradient(180deg,#F4F6F5,#AEB8B3);-webkit-background-clip:text;background-clip:text;color:transparent}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.acct{font-family:ui-monospace,Menlo,monospace;color:var(--acc);font-size:17px}
+label{display:block;font-size:13px;color:var(--mute);margin:14px 0 6px}
+.row{display:flex;gap:8px}.row input{width:auto}
+input{width:100%;flex:1;min-width:0;background:#08100D;border:1px solid var(--line);color:var(--fg);border-radius:10px;padding:12px;font-size:16px}
+input:focus{outline:2px solid var(--acc);outline-offset:1px}
+.eye{background:transparent;border:1px solid var(--line);color:var(--mute);border-radius:10px;padding:0 12px;font-size:13px}
+button.go{width:100%;margin-top:18px;background:var(--acc);color:#02140B;border:0;border-radius:12px;padding:14px;font-weight:700;font-size:16px}
+button.go:disabled{opacity:.5}
+.note{font-size:13px;color:var(--mute);margin-top:14px}
+.note b{color:var(--fg)}
+.err{color:var(--err);font-size:14px;margin-top:10px;min-height:20px}
+.lock{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--mute);margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
+</style>
+</head>
+<body>
+<main>
+  <div class="top"><img src="/emblem.jpg" alt=""><h1>Aktivasi akun MT5</h1></div>
+  <div class="card" id="form">
+    <div style="font-size:13px;color:var(--mute)">Akun Vantage Anda</div>
+    <div class="acct" id="acct">••••</div>
+    <label for="pw">Password trading MT5 (bukan password email/portal)</label>
+    <div class="row"><input id="pw" type="password" autocomplete="off" autocapitalize="off" spellcheck="false"><button class="eye" type="button" id="eye">Lihat</button></div>
+    <label for="pw2">Ulangi password</label>
+    <input id="pw2" type="password" autocomplete="off" autocapitalize="off" spellcheck="false">
+    <div class="err" id="err"></div>
+    <button class="go" id="go" type="button">🔐 Kirim terenkripsi</button>
+    <div class="lock"><span>🔒</span><span>Password <b>dienkripsi di HP Anda</b> sebelum dikirim. Telegram, website dan admin hanya melihat teks acak; hanya server Phantom yang bisa membukanya untuk login MT5. Anda bisa mengganti password MT5 kapan saja untuk memutus akses.</span></div>
+  </div>
+  <div class="card" id="outside" style="display:none">Halaman ini hanya bisa dibuka dari bot <b>@PhantomGen3_bot</b> lewat tombol <b>🔐 Isi / ganti password MT5</b>.</div>
+</main>
+<script>
+(function(){
+  var tg = window.Telegram && window.Telegram.WebApp;
+  var q = new URLSearchParams(location.search);
+  document.getElementById('acct').textContent = (q.get('a') || '••••').slice(0, 12);
+  if (!tg || !tg.initData) { document.getElementById('form').style.display='none'; document.getElementById('outside').style.display='block'; return; }
+  tg.ready(); tg.expand();
+  var pw = document.getElementById('pw'), pw2 = document.getElementById('pw2'), err = document.getElementById('err'), go = document.getElementById('go');
+  document.getElementById('eye').onclick = function(){ var t = pw.type === 'password' ? 'text' : 'password'; pw.type = t; pw2.type = t; this.textContent = t === 'password' ? 'Lihat' : 'Sembunyi'; };
+  function b64ToBuf(b){ var s = atob(b), a = new Uint8Array(s.length); for (var i=0;i<s.length;i++) a[i]=s.charCodeAt(i); return a.buffer; }
+  function bufToB64(buf){ var a = new Uint8Array(buf), s=''; for (var i=0;i<a.length;i++) s+=String.fromCharCode(a[i]); return btoa(s); }
+  go.onclick = async function(){
+    err.textContent = '';
+    if (!pw.value) { err.textContent = 'Password masih kosong.'; return; }
+    if (pw.value !== pw2.value) { err.textContent = 'Kedua password tidak sama.'; return; }
+    if (pw.value.length > 64) { err.textContent = 'Password terlalu panjang.'; return; }
+    go.disabled = true; go.textContent = 'Mengenkripsi...';
+    try {
+      var k = await (await fetch('/form_key.json', {cache: 'no-store'})).json();
+      var key = await crypto.subtle.importKey('spki', b64ToBuf(k.spki), {name: 'RSA-OAEP', hash: 'SHA-256'}, false, ['encrypt']);
+      var ct = await crypto.subtle.encrypt({name: 'RSA-OAEP'}, key, new TextEncoder().encode(pw.value));
+      pw.value = ''; pw2.value = '';
+      tg.sendData(JSON.stringify({v: 1, enc: bufToB64(ct)}));
+    } catch (e) {
+      go.disabled = false; go.textContent = '🔐 Kirim terenkripsi';
+      err.textContent = 'Gagal mengenkripsi. Periksa koneksi lalu coba lagi.';
+    }
+  };
+})();
+</script>
+</body>
+</html>
