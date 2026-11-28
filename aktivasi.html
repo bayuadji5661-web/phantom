@@ -51,7 +51,8 @@ button.go:disabled{opacity:.5}
   var tg = window.Telegram && window.Telegram.WebApp;
   var q = new URLSearchParams(location.search);
   document.getElementById('acct').textContent = '••••' + (q.get('a') || '').replace(/[^0-9]/g, '').slice(-4);
-  if (!tg || !tg.initData) { document.getElementById('form').style.display='none'; document.getElementById('outside').style.display='block'; return; }
+  // Mini Apps opened from a keyboard button get no initData (by design) but can sendData; outside Telegram platform is 'unknown'.
+  if (!tg || !tg.platform || tg.platform === 'unknown' || typeof tg.sendData !== 'function') { document.getElementById('form').style.display='none'; document.getElementById('outside').style.display='block'; return; }
   tg.ready(); tg.expand();
   var pw = document.getElementById('pw'), pw2 = document.getElementById('pw2'), err = document.getElementById('err'), go = document.getElementById('go');
   document.getElementById('eye').onclick = function(){ var t = pw.type === 'password' ? 'text' : 'password'; pw.type = t; pw2.type = t; this.textContent = t === 'password' ? 'Lihat' : 'Sembunyi'; };
